@@ -8,8 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+
+extern NSString *const SCSessionStateChangedNotification;
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+- (void)transitionToViewController:(UIViewController *)viewController
+                    withTransition:(UIViewAnimationOptions)transition;
 
 @end

@@ -7,12 +7,48 @@
 //
 
 #import "AppDelegate.h"
+#import <Pushwoosh/PushNotificationManager.h>
+//#import "PWLocationTracker.h"
+
+#define LOCATIONS_FILE @"PWLocationTracking"
+#define LOCATIONS_FILE_TYPE @"log"
+
+NSString *const SCSessionStateChangedNotification =
+@"com.smartplace.AlertaMX:SCSessionStateChangedNotification";
+
+
+@interface AppDelegate () <PushNotificationDelegate> {
+    PushNotificationManager *pushManager;
+}
+@end
+
 
 @implementation AppDelegate
 
+@synthesize window = _window;
+
+/*
+- (void) onPushAccepted:(PushNotificationManager *)pushManager withNotification:(NSDictionary *)pushNotification {
+    NSLog(@"Push notification received");
+}
+ */
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes: (UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound)];
+    
+    pushManager = [PushNotificationManager pushManager];
+    pushManager.delegate = self;
+    [pushManager handlePushReceived:launchOptions];
+    
+    if ([launchOptions objectForKey:UIApplicationLaunchOptionsLocationKey]) {
+        
+        [pushManager startLocationTracking];
+        
+    }
+    
+     [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
     return YES;
 }
 							
@@ -42,5 +78,50 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+- (void)transitionToViewController:(UIViewController *)viewController
+                    withTransition:(UIViewAnimationOptions)transition
+{
+    [UIView transitionFromView:self.window.rootViewController.view
+                        toView:viewController.view
+                      duration:0.65f
+                       options:transition
+                    completion:^(BOOL finished){
+                        self.window.rootViewController = viewController;
+                    }];
+}
+
+#pragma mark - Push Notification Manager
+
+- (void)onDidRegisterForRemoteNotificationsWithDeviceToken:(NSString *)token
+{
+    NSLog(@"Registered with push token: %@", token);
+}
+
+- (void)onDidFailToRegisterForRemoteNotificationsWithError:(NSError *)error
+{
+    NSLog(@"Failed to register: %@", [error description]);
+}
+
+- (void)onPushAccepted:(PushNotificationManager *)pushManager withNotification:(NSDictionary *)pushNotification
+{
+    [PushNotificationManager clearNotificationCenter];
+
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+
+    NSLog(@"Received push notification: %@", pushNotification);
+
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+    [pushManager handlePushReceived:userInfo];
+}
+
+- (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken
+{
+    [pushManager handlePushRegistration:deviceToken];
+}
+
 
 @end
