@@ -7,7 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import "Declarations.h"
 #import <Pushwoosh/PushNotificationManager.h>
+#import <GoogleMaps/GoogleMaps.h>
+
 //#import "PWLocationTracker.h"
 
 #define LOCATIONS_FILE @"PWLocationTracking"
@@ -33,10 +36,14 @@ NSString *const SCSessionStateChangedNotification =
 }
  */
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
+    [GMSServices provideAPIKey:@"AIzaSyCU7COsXav4ABapevKDuYqPHrYm6Z4rJkA"];
+    
     [[UIApplication sharedApplication] registerForRemoteNotificationTypes: (UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound)];
+    
     
     pushManager = [PushNotificationManager pushManager];
     pushManager.delegate = self;
@@ -121,7 +128,19 @@ NSString *const SCSessionStateChangedNotification =
 - (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken
 {
     [pushManager handlePushRegistration:deviceToken];
+    mstrUserPushToken   = [[deviceToken description] stringByTrimmingCharactersInSet: [NSCharacterSet characterSetWithCharactersInString:@"<>"]];
+    mstrUserPushToken   = [mstrUserPushToken stringByReplacingOccurrencesOfString:@" " withString:@""];
+    NSLog(@"mstrUserPushToken %@", mstrUserPushToken);
+    
 }
+/*
+- (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    NSString *token = [[deviceToken description] stringByTrimmingCharactersInSet: [NSCharacterSet characterSetWithCharactersInString:@"<>"]];
+    token = [token stringByReplacingOccurrencesOfString:@" " withString:@""];
+    NSLog(@"content---%@", token);
+}
+ */
 
 
 @end

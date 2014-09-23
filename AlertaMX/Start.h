@@ -11,8 +11,12 @@
 #import "IntroPages.h"
 #import <QuartzCore/QuartzCore.h>
 #import <CoreText/CoreText.h>
+#import <Pushwoosh/PushNotificationManager.h>
 
 @interface Start : UIViewController<CLLocationManagerDelegate>
+//Variables
+@property (nonatomic,strong) PushNotificationManager    *PushNotificationManager;
+
 //View
 @property (strong, nonatomic) IBOutlet UIView *viewStart;
 

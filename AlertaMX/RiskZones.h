@@ -24,7 +24,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *lblItem4;
 @property (strong, nonatomic) IBOutlet UILabel *lblItem5;
 
-
 //ScrollViews
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollTop;
 

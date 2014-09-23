@@ -8,6 +8,10 @@
 	<string>${PRODUCT_NAME}</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleIcons</key>
+	<dict/>
+	<key>CFBundleIcons~ipad</key>
+	<dict/>
 	<key>CFBundleIdentifier</key>
 	<string>com.smartplace.${PRODUCT_NAME:rfc1034identifier}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -24,6 +28,14 @@
 	<string>1.0</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>Pushwoosh_APPID</key>
+	<string>64DD0-96DF0</string>
+	<key>Pushwoosh_AUTO</key>
+	<true/>
+	<key>Supported background modes</key>
+	<array>
+		<string>remote-notification</string>
+	</array>
 	<key>UIAppFonts</key>
 	<array>
 		<string>OpenSans-Regular.ttf</string>
@@ -31,6 +43,8 @@
 		<string>OpenSans-Bold.ttf</string>
 		<string>OpenSans-Semibold.ttf</string>
 	</array>
+	<key>UILaunchStoryboardName</key>
+	<string>iPhone</string>
 	<key>UIMainStoryboardFile</key>
 	<string>iPhone</string>
 	<key>UIMainStoryboardFile~ipad</key>
@@ -39,6 +53,8 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>UIStatusBarHidden</key>
+	<true/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
@@ -50,13 +66,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>UIStatusBarHidden</key>
-	<true/>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-	<key>Pushwoosh_APPID</key>
-	<string>64DD0-96DF0</string>
-	<key>Pushwoosh_AUTO</key>
-	<true/>
 </dict>
 </plist>

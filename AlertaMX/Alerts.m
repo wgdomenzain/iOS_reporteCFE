@@ -1,3 +1,5 @@
+
+
 //
 //  Alerts.m
 //  AlertaMX
@@ -10,8 +12,13 @@
 #import "Declarations.h"
 #import "Welcome.h"
 #import "cellAlerts.h"
+#import "AlertDetails.h"
 
 NSMutableArray *records;
+
+UILabel *lblItemAlert;
+UILabel *lblItemLineAlert;
+UIButton *btnItemAlert;
 
 //BOOL
 BOOL    boScrollTable           = nScrollingUp;
@@ -28,6 +35,9 @@ NSURL       *urlMap;
 NSString    *strMap;
 
 @interface Alerts ()
+{
+     InfiniteScrollPicker *isp;
+}
 
 @end
 
@@ -47,7 +57,7 @@ NSString    *strMap;
 {
     [super viewDidLoad];
     [self initViewController];
-    //[self loadXML];
+    [self loadXML];
 }
 
 - (void)didReceiveMemoryWarning
@@ -68,6 +78,12 @@ NSString    *strMap;
     [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
+                                                  forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
+    self.navigationController.navigationBar.translucent = YES;
+    self.navigationController.view.backgroundColor = [UIColor clearColor];
+    
     self.lblTitleAlerts.font        = [UIFont fontWithName: @"OpenSans-Light" size: 22.0];
     self.lblUpdated.font            = [UIFont fontWithName: @"OpenSans-Light" size: 14.0];
     
@@ -78,21 +94,128 @@ NSString    *strMap;
     self.tabBarItem.imageInsets = UIEdgeInsetsMake(8, 0, -8, 0);
     
     [self.tblAlerts reloadData];
-    
-    
-    //self.lblBtnHelp.layer.borderColor    = [UIColor colorWithRed:80.0/255.0 green:80.0/255.0 blue:80.0/255.0 alpha:0.3].CGColor;
-    //self.lblBtnHelp.layer.borderWidth = 4.0;
     self.lblBtnHelp.clipsToBounds = YES;
     self.lblBtnHelp.layer.cornerRadius = 30;
     
+    muiTotalAlertCAPS       = 1;
+    mmaAlertsCAPSNames[0]   = [NSString stringWithFormat:@"Ciclón Tropical"];
+    
+    if (muiTotalAlertCAPS == 1)
+    {
+        self.scrollViewAlerts.contentSize   = CGSizeMake(320, self.scrollViewAlerts.frame.size.height);
+        lblItemAlert                        = [[UILabel alloc] initWithFrame:CGRectMake(0,0,320,44)];
+        lblItemAlert.backgroundColor        = [UIColor clearColor];
+        lblItemAlert.textColor              = [UIColor darkGrayColor];
+        lblItemAlert.text                   = mmaAlertsCAPSNames[0];
+        lblItemAlert.numberOfLines          = 2;
+        lblItemAlert.font                   = [UIFont fontWithName: @"OpenSans-Light" size: 13.0];
+        lblItemAlert.textAlignment          = NSTextAlignmentCenter;
+        lblItemAlert.tag = 1;
+        
+        btnItemAlert                         = [[UIButton alloc] initWithFrame:CGRectMake(0,0,320,44)];
+        [btnItemAlert addTarget:self action:@selector(btnItemPressed:) forControlEvents:UIControlEventTouchUpInside];
+        btnItemAlert.showsTouchWhenHighlighted = YES;
+        btnItemAlert.backgroundColor = [UIColor clearColor];
+        [self.scrollViewAlerts addSubview:lblItemAlert];
+        [self.scrollViewAlerts addSubview:btnItemAlert];
+        btnItemAlert.tag = 1;
+        if (lblItemAlert.tag == 1)
+        {
+            lblItemAlert.textColor            = [UIColor darkGrayColor];
+            lblItemAlert.font                 = [UIFont fontWithName: @"OpenSans" size: 16.0];
+        }
+        NSLog(@"lblBtnItem.text  %@",lblItemAlert.text );
+    }
+    else if (muiTotalAlertCAPS == 2)
+    {
+        
+    }
+    else
+    {
+        for (int i = 0; i < muiTotalAlertCAPS; i++)
+        {
+            self.scrollViewAlerts.contentSize   = CGSizeMake((i+1)*320/3, self.scrollViewAlerts.frame.size.height);
+            lblItemAlert                        = [[UILabel alloc] initWithFrame:CGRectMake(i*320/3 + 5,0,320/3 - 10,44)];
+            lblItemAlert.backgroundColor        = [UIColor clearColor];
+            lblItemAlert.textColor              = [UIColor darkGrayColor];
+            lblItemAlert.text                   = mmaRiskZoneItems[i];
+            lblItemAlert.numberOfLines          = 2;
+            lblItemAlert.font                   = [UIFont fontWithName: @"OpenSans-Light" size: 13.0];
+            lblItemAlert.textAlignment          = NSTextAlignmentCenter;
+            lblItemAlert.tag = i+1;
+            
+            btnItemAlert                         = [[UIButton alloc] initWithFrame:CGRectMake(i*320/3 + 5,0,320/3 - 10,44)];
+            [btnItemAlert addTarget:self action:@selector(btnItemPressed:) forControlEvents:UIControlEventTouchUpInside];
+            btnItemAlert.showsTouchWhenHighlighted = YES;
+            btnItemAlert.backgroundColor = [UIColor clearColor];
+            [self.scrollViewAlerts addSubview:lblItemAlert];
+            [self.scrollViewAlerts addSubview:btnItemAlert];
+            btnItemAlert.tag = i+1;
+            if (lblItemAlert.tag == 1)
+            {
+                lblItemAlert.textColor            = [UIColor darkGrayColor];
+                lblItemAlert.font                 = [UIFont fontWithName: @"OpenSans" size: 13.0];
+            }
+            NSLog(@"lblBtnItem.text  %@",lblItemAlert.text );
+        }
+    }
+//-------------------------------------------------------------------------------
+    self.lblHelpTitle.font  = [UIFont fontWithName: @"OpenSans-Light" size: 21.0];
+    self.lblHelpDesc.font   = [UIFont fontWithName: @"OpenSans" size: 21.0];
+    self.lblHelpCancel.font = [UIFont fontWithName: @"OpenSans-Light" size: 18.0];
+    self.lblAskHelp.font    = [UIFont fontWithName: @"OpenSans-Light" size: 18.0];
+    
+    
+    NSMutableArray *set1 = [[NSMutableArray alloc] init];
+    
+    [set1 addObject:[UIImage imageNamed:[NSString stringWithFormat:@"2_Trapped.png"]]];
+    [set1 addObject:[UIImage imageNamed:[NSString stringWithFormat:@"3_MedicalAid.png"]]];
+    [set1 addObject:[UIImage imageNamed:[NSString stringWithFormat:@"1_Ok.png"]]];
+    
+    isp = [[InfiniteScrollPicker alloc] initWithFrame:CGRectMake(20, 4, 240, 140)];
+    [isp setItemSize:CGSizeMake(140, 140)];
+    [isp setImageAry:set1];
+    [isp setSelectedItem:2];
+    
+    [self.viewHelp addSubview:isp];
+}
 
-    //[self.tblAlerts reloadData];
-
+/**********************************************************************************************
+ Image Picker
+ **********************************************************************************************/
+- (void)infiniteScrollPicker:(InfiniteScrollPicker *)infiniteScrollPicker didSelectAtImage:(UIImage *)image
+{
+    if (image == [UIImage imageNamed:@"1_Ok.png"])
+    {
+        NSLog(@"selected s1_0");
+        self.lblHelpDesc.text = @"Estoy bien";
+    }
+    else if (image == [UIImage imageNamed:@"2_Trapped.png"])
+    {
+        NSLog(@"selected s1_1");
+        self.lblHelpDesc.text = @"Estoy Atrapado";
+    }
+    else if (image == [UIImage imageNamed:@"3_MedicalAid.png"])
+    {
+        NSLog(@"selected s1_2");
+        self.lblHelpDesc.text = @"Estoy Lastimado";
+    }
+    else
+    {
+        NSLog(@"selected %@", image);
+    }
 }
 /**********************************************************************************************
  Buttons
  **********************************************************************************************/
+- (IBAction)btnItemPressed:(UIButton*)sender
+{
+    NSString *strItem = [NSString stringWithFormat:@"%d", (int)sender.tag - 1];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSLog(@"Tag btnItemPressed %ld",(long)sender.tag);
 
+    });
+}
 - (IBAction)btnMenuAlertsPressed:(id)sender
 {
     NSLog(@"btnMenuAlertsPressed");
@@ -106,15 +229,35 @@ NSString    *strMap;
 {
     [self loadXML];
 }
+//-------------------------------------------------------------------------------
+- (IBAction)btnHelpAlertsPressed:(id)sender
+{
+    self.viewAlpha.hidden = NO;
+    [UIView animateWithDuration:0.3f animations:^
+    {
+        //self.viewDark.hidden                    = NO;
+        self.viewAlerts.userInteractionEnabled  = FALSE;
+        self.viewHelp.frame                     = CGRectMake(self.viewHelp.frame.origin.x - 320, self.viewHelp.frame.origin.y, self.viewHelp.frame.size.width, self.viewHelp.frame.size.height);
+    }];
+}
+//-------------------------------------------------------------------------------
+- (IBAction)btnHelpAlertCancelPressed:(id)sender
+{
+    [UIView animateWithDuration:0.3f animations:^ {
+        self.viewAlerts.userInteractionEnabled   = TRUE;
+        self.viewHelp.frame                 = CGRectMake(self.viewHelp.frame.origin.x + 320, self.viewHelp.frame.origin.y, self.viewHelp.frame.size.width, self.viewHelp.frame.size.height);
+    }];
+    self.viewAlpha.hidden = YES;
+}
 
-- (IBAction)btnHelpAlertsPressed:(id)sender {
+- (IBAction)btnHelpAskPressed:(id)sender {
 }
 /**********************************************************************************************
  XML
  **********************************************************************************************/
 - (void) loadXML
 {
-    //self.lblUpdated.text = @"Actualizando...";
+    self.lblUpdated.text = @"Actualizando...";
     // Create a success block to be called when the async request completes
     TBXMLSuccessBlock successBlock = ^(TBXML *tbxmlDocument) {
         // If TBXML found a root node, process element and iterate all children
@@ -166,12 +309,6 @@ NSString    *strMap;
             [mUserDefaults setObject: mmaAreaGeocode forKey: pmmaAreaGeocode];
             [mUserDefaults setObject: mmaAltitude forKey: pmmaAltitude];
             [mUserDefaults setObject: mmaCeiling forKey: pmmaCeiling];
-        
-            [mUserDefaults setObject: mmaDirection forKey: pmmaDirection];
-        
-            [self.tblAlerts reloadData];
-        
-            uiIndex = 0;
 //-------------------------------------------------------------------------------
 //Date and Time
         NSString *strTemp;
@@ -187,11 +324,9 @@ NSString    *strMap;
         NSLog(@"strTemp %@", strTemp);
         strTemp = [strTemp stringByAppendingString:[dateFormatter2 stringFromDate:now]];
         NSLog(@"strTemp %@", strTemp);
-        self.lblUpdated.text = strTemp;
-        [mUserDefaults setObject: self.lblUpdated.text forKey: pmmaAlertUpdatedTime];
 //-------------------------------------------------------------------------------
 //Logs
-        
+/*
         NSLog(@"ARRAY mmaMsgID =  %@", mmaMsgID);
         NSLog(@"ARRAY mmaSenderID =  %@", mmaSenderID);
         NSLog(@"ARRAY mmaSentTime =  %@", mmaSentTime);
@@ -224,7 +359,12 @@ NSString    *strMap;
         NSLog(@"ARRAY mmaInstruction =  %@", mmaInstruction);
         NSLog(@"ARRAY mmaWeb =  %@", mmaWeb);
         NSLog(@"ARRAY mmaContact =  %@", mmaContact);
-        //NSLog(@"ARRAY mmaParameter =  %@", mmaParameter);
+        NSLog(@"ARRAY mmaParameter =  %@", mmaParameter);
+        NSLog(@"ARRAY mmaParameter[0] =  %@", mmaParameter[0]);
+        NSLog(@"ARRAY mmaParameterAll =  %@", mmaParameterAll);
+        NSLog(@"ARRAY mmaParameterAll[0] =  %@", mmaParameterAll[0]);
+        NSLog(@"ARRAY mmaParameterAll Count =  %lu", (unsigned long)mmaParameterAll.count);
+        NSLog(@"ARRAY Headline Count =  %lu", (unsigned long)mmaHeadline.count);
 //-------------------------------------------------------------------------------
         NSLog(@"ARRAY mmaResourceDesc =  %@", mmaResourceDesc);
         NSLog(@"ARRAY mmaMIMEType =  %@", mmaMIMEType);
@@ -235,16 +375,127 @@ NSString    *strMap;
 //-------------------------------------------------------------------------------
         NSLog(@"ARRAY mmaAreaDesc =  %@", mmaAreaDesc);
         NSLog(@"ARRAY mmaAreaPolygon =  %@", mmaAreaPolygon);
+        NSLog(@"ARRAY mmaAreaPolygonAll count =  %lu", (unsigned long)mmaAreaPolygonAll.count);
+        NSLog(@"ARRAY mmaAreaPolygonAll =  %@", mmaAreaPolygonAll);
+        NSLog(@"ARRAY mmaAreaPolygonAll[0] =  %@", mmaAreaPolygonAll[0]);
+        NSLog(@"ARRAY mmaAreaPolygonAll[0][0] =  %@", mmaAreaPolygonAll[0][0]);
+        //NSLog(@"ARRAY mmaAreaPolygonAll[0][0][0] =  %@", mmaAreaPolygonAll[0][0][0]);
         NSLog(@"ARRAY mmaAreaPolygon2 =  %@", mmaAreaPolygon2);
         NSLog(@"ARRAY mmaAreaCircle =  %@", mmaAreaCircle);
         NSLog(@"ARRAY mmaAreaGeocode =  %@", mmaAreaGeocode);
         NSLog(@"ARRAY mmaAltitude =  %@", mmaAltitude);
         NSLog(@"ARRAY mmaCeiling =  %@", mmaCeiling);
-        
-        NSLog(@"ARRAY mmaDirection =  %@", mmaDirection);
-        
-        
+ */
 
+        
+        for (int k=0; k < mmaParameterAll.count; k++)
+        {
+            NSMutableArray *maValueName = [[NSMutableArray alloc] init];
+            maValueName = [mmaParameterAll[k]      valueForKey:    @"valueName"];
+            
+            NSMutableArray *maValue     = [[NSMutableArray alloc] init];
+            maValue     = [mmaParameterAll[k]      valueForKey:    @"value"];
+            
+            BOOL    boDirection     = FALSE;
+            BOOL    boAuthor        = FALSE;
+            BOOL    boReviewer      = FALSE;
+            BOOL    boSemaphore     = FALSE;
+            BOOL    boDistance      = FALSE;
+            BOOL    boCategory      = FALSE;
+            
+            for (int i = 0; i < [maValueName count]; i++)
+            {
+                if ([maValueName[i] isEqual:@"trayectoria"])
+                {
+                    [mmaDirection addObject:maValue[i]];
+                    boDirection = TRUE;
+                }
+                else if ([maValueName[i] isEqual:@"Elaboró"])
+                {
+                    [mmaAuthor addObject:maValue[i]];
+                    boAuthor    = TRUE;
+                }
+                else if ([maValueName[i] isEqual:@"Revisó"])
+                {
+                    [mmaReviewer addObject:maValue[i]];
+                    boReviewer  = TRUE;
+                }
+                else if ([maValueName[i] isEqual:@"semáforo"])
+                {
+                    [mmaSemaphore addObject:maValue[i]];
+                    boSemaphore = TRUE;
+                }
+                else if ([maValueName[i] isEqual:@"distancia"])
+                {
+                    [mmaDistance addObject:maValue[i]];
+                    boDistance  = TRUE;
+                }
+                else if ([maValueName[i] isEqual:@"categoría"])
+                {
+                    [mmaParameterCategory addObject:maValue[i]];
+                    boCategory  = TRUE;
+                }
+
+                if (i == [maValueName count] - 1 )
+                {
+                    if (!boDirection)
+                    {
+                        [mmaDirection addObject:nNoInfoText];
+                    }
+                    if (!boAuthor)
+                    {
+                        [mmaAuthor addObject:nNoInfoText];
+                    }
+                    if (!boReviewer)
+                    {
+                        [mmaReviewer addObject:nNoInfoText];
+                    }
+                    if (!boSemaphore)
+                    {
+                        [mmaSemaphore addObject:nNoInfoText];
+                    }
+                    if (!boDistance)
+                    {
+                        [mmaDistance addObject:nNoInfoText];
+                    }
+                    if (!boCategory)
+                    {
+                        [mmaParameterCategory addObject:nNoInfoText];
+                    }
+                }
+            }
+        }
+        //NSLog(@"ARRAY mmaDirection Count =  %lu", (unsigned long)mmaDirection.count);
+        //NSLog(@"ARRAY mmaDirection =  %@", mmaDirection);
+        [mUserDefaults setObject: mmaDirection forKey: pmmaDirection];
+        
+        //NSLog(@"ARRAY mmaAuthor Count =  %lu", (unsigned long)mmaAuthor.count);
+        //NSLog(@"ARRAY mmaAuthor =  %@", mmaAuthor);
+        [mUserDefaults setObject: mmaAuthor forKey: pmmaAuthor];
+        
+        //NSLog(@"ARRAY mmaReviewer Count =  %lu", (unsigned long)mmaReviewer.count);
+        //NSLog(@"ARRAY mmaReviewer =  %@", mmaReviewer);
+        [mUserDefaults setObject: mmaReviewer forKey: pmmaReviewer];
+        
+        //NSLog(@"ARRAY mmaSemaphore Count =  %lu", (unsigned long)mmaSemaphore.count);
+        //NSLog(@"ARRAY mmaSemaphore =  %@", mmaSemaphore);
+        [mUserDefaults setObject: mmaSemaphore forKey: pmmaSemaphore];
+        
+        //NSLog(@"ARRAY mmaParameterCategory Count =  %lu", (unsigned long)mmaParameterCategory.count);
+        //NSLog(@"ARRAY mmaParameterCategory =  %@", mmaParameterCategory);
+        [mUserDefaults setObject: mmaCategory forKey: pmmaParameterCategory];
+        
+        //NSLog(@"ARRAY mmaDistance Count =  %lu", (unsigned long)mmaDistance.count);
+        //NSLog(@"ARRAY mmaDistance =  %@", mmaDistance);
+        [mUserDefaults setObject: mmaDistance forKey: pmmaDistance];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+        self.lblUpdated.text = strTemp;
+        [mUserDefaults setObject: self.lblUpdated.text forKey: pmmaAlertUpdatedTime];
+        [self.tblAlerts reloadData];
+        [self.tblAlerts setNeedsDisplay];
+        [[NSRunLoop mainRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.1]];
+        });
     };
     
     // Create a failure block that gets called if something goes wrong
@@ -253,7 +504,7 @@ NSString    *strMap;
     };
     
     // Initialize TBXML with the URL of an XML doc. TBXML asynchronously loads and parses the file.
-    TBXML *tbxml = [[TBXML alloc] initWithURL:[NSURL URLWithString:@"https://correo1.conagua.gob.mx/feedsmn/feedalert.aspx"]
+    TBXML *tbxml = [[TBXML alloc] initWithURL:[NSURL URLWithString:nURLCAP1]
                                       success:successBlock
                                       failure:failureBlock];
     NSLog(@"tbxml %@", tbxml);
@@ -264,14 +515,14 @@ NSString    *strMap;
     do {
         // Display the name of the element and description
         NSString * description          = [TBXML textForElement:element];
-        NSLog(@"ELEMENT %@ = %@", [TBXML elementName:element], description);
+        //NSLog(@"ELEMENT %@ = %@", [TBXML elementName:element], description);
         
         if (element->firstChild)
             [self traverseElement:element->firstChild];
 //-------------------------------------------------------------------------------
         if ([[TBXML elementName:element] isEqualToString:   @"alert"])
         {//Alert
-            NSLog(@"ENTRY ELEMENT %@ = %@", [TBXML elementName:element], description);
+            //NSLog(@"ENTRY ELEMENT %@ = %@", [TBXML elementName:element], description);
             TBXMLElement *msgID         = [TBXML childElementNamed: @"identifier" parentElement:element];
             TBXMLElement *senderID      = [TBXML childElementNamed: @"sender" parentElement:element];
             TBXMLElement *sentTime      = [TBXML childElementNamed: @"sent" parentElement:element];
@@ -357,7 +608,7 @@ NSString    *strMap;
         {//Info
             //NSLog(@"INFO");
             uiIndex = 0;
-            NSLog(@"INFO ELEMENT %@ = %@", [TBXML elementName:element], description);
+            //NSLog(@"INFO ELEMENT %@ = %@", [TBXML elementName:element], description);
             TBXMLElement *language      = [TBXML childElementNamed: @"language" parentElement:element];
             TBXMLElement *category      = [TBXML childElementNamed: @"category" parentElement:element];
             TBXMLElement *event         = [TBXML childElementNamed: @"event" parentElement:element];
@@ -378,7 +629,7 @@ NSString    *strMap;
             TBXMLElement *contact       = [TBXML childElementNamed: @"contact" parentElement:element];
             TBXMLElement *parameter     = [TBXML childElementNamed: @"parameter" parentElement:element];
             
-            //mmaParameter        = [NSMutableArray array];
+            mmaParameter                = [[NSMutableArray alloc] init];
             while (parameter)
             {
                 TBXMLElement *valueName     = [TBXML childElementNamed: @"valueName" parentElement:parameter];
@@ -395,13 +646,12 @@ NSString    *strMap;
                     [mmaParameter addObject:dictParameters];
                 }
                  */
-                [mmaParameter[uiIndex] addObject:dictParameters];
+                [mmaParameter addObject:dictParameters];
                 //NSLog(@"mmaParameter %@", mmaParameter);
                 
                 parameter = [TBXML nextSiblingNamed:@"parameter" searchFromElement:parameter];
             }
-            //NSLog(@"ARRAY mmaParameter[%d] =  %@", uiIndex, mmaParameter[uiIndex]);
-            uiIndex++;
+            [mmaParameterAll addObject:mmaParameter];
             
             if (!(nil == language))
             {
@@ -492,13 +742,6 @@ NSString    *strMap;
             {
                 [mmaContact addObject:[NSArray arrayWithObjects:   [TBXML textForElement:contact], nil]];
             }
-            
-            /*
-            if (!(nil == parameter))
-            {
-                [mmaParameter addObject:[NSArray arrayWithObjects:   [TBXML textForElement:parameter], nil]];
-            }
-             */
         }
 //-------------------------------------------------------------------------------
         
@@ -555,16 +798,45 @@ NSString    *strMap;
             TBXMLElement *altitude      = [TBXML childElementNamed: @"altitude" parentElement:element];
             TBXMLElement *ceiling       = [TBXML childElementNamed: @"ceiling" parentElement:element];
             
+            mmaAreaPolygon              = [[NSMutableArray alloc] init];
+            if (!polygon)
+            {
+                [mmaAreaPolygon addObject:@"NoneMap"];
+            }
+            int i = 0;
+            while (polygon)
+            {
+                //TBXMLElement *polygonPack = [TBXML childElementNamed: @"polygon" parentElement:element];
+                
+                //NSLog(@"polygonPack %d %@", i, [TBXML textForElement:polygon]);
+                if (!(nil == polygon))
+                {
+                    //[mmaAreaPolygon addObject:[NSArray arrayWithObjects:   [TBXML textForElement:polygon], nil]];
+                    [mmaAreaPolygon addObject:[TBXML textForElement:polygon]];
+                }
+                else
+                {
+                    [mmaAreaPolygon addObject:@"NoneMap"];
+                    //[mmaAreaPolygon addObject:[NSArray arrayWithObjects:   [TBXML textForElement:polygon], nil]];
+                }
+                i++;
+                polygon = [TBXML nextSiblingNamed:@"polygon" searchFromElement:polygon];
+            }
+            
+            [mmaAreaPolygonAll addObject:mmaAreaPolygon];
+            //NSLog(@"mmaAreaPolygonAll %d %@", i, mmaAreaPolygonAll);
+            
             if (!(nil == areaDesc))
             {
                 [mmaAreaDesc addObject:[NSArray arrayWithObjects:      [TBXML textForElement:areaDesc], nil]];
             }
             
+            /*
             if (!(nil == polygon))
             {
                 [mmaAreaPolygon addObject:[NSArray arrayWithObjects:   [TBXML textForElement:polygon], nil]];
-                //NSLog(@"mmaAreaPolygon %@", mmaAreaPolygon);
             }
+             */
             
             if (!(nil == circle))
             {
@@ -586,35 +858,6 @@ NSString    *strMap;
                 [mmaCeiling addObject:[NSArray arrayWithObjects:   [TBXML textForElement:ceiling], nil]];
             }
         }
-        /*
-        else if ([[TBXML elementName:element] isEqualToString:  @"parameter"])
-        {//Resource
-            NSLog(@"parameter");
-            NSLog(@"parameter ELEMENT %@ = %@", [TBXML elementName:element], description);
-            TBXMLElement *valueName     = [TBXML childElementNamed: @"valueName" parentElement:element];
-            TBXMLElement *value       = [TBXML childElementNamed: @"value" parentElement:element];
-
-            
-            if (!(nil == valueName))
-            {
-                if ([[TBXML textForElement:valueName] isEqual: @"trayectoria"])
-                {
-                    [mmaDirection addObject:[NSArray arrayWithObjects:      [TBXML textForElement:value], nil]];
-                }
-            }
-        }
-         */
-
-        /*
-        else if ([[TBXML elementName:element] isEqualToString:  @"polygon"])
-        {
-            NSLog(@"polygon");
-            NSLog(@"polygon ELEMENT uiIndex %d %@ = %@", uiIndex, [TBXML elementName:element], description);
-            [mmaAreaPolygon2[uiIndex] addObject:description];
-            NSLog(@"mmaAreaPolygon2 %@", mmaAreaPolygon2);
-            uiIndex ++;
-        }
-         */
     } while ((element = element->nextSibling));
     
 }
@@ -647,7 +890,6 @@ NSString    *strMap;
     }
     
     flLastContentOffset = scrollView.contentOffset.y;
-    
 }
 //-------------------------------------------------------------------------------
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
@@ -714,11 +956,6 @@ NSString    *strMap;
     if (cell == nil)
     {
         cell = [[cellAlerts alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        /*
-        cell.lblHeader.lineBreakMode = NSLineBreakByWordWrapping;
-        cell.lblHeader.numberOfLines = 0;
-        cell.lblHeader.font = [UIFont fontWithName:@"OpenSans" size:19.0];
-         */
     }
 //-------------------------------------------------------------------------------
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -730,13 +967,12 @@ NSString    *strMap;
     cell.lblHeader.adjustsFontSizeToFitWidth = YES;
 //-------------------------------------------------------------------------------
 //Direction
-    /*
     if (!(nil == mmaDirection) && !([@"" isEqual:mmaDirection]) && (mmaDirection.count > 0))
     {
-        cell.lblLocation.text = [NSString stringWithFormat:@"%@", mmaDirection[indexPath.row][0]];
+        cell.lblLocation.text = [NSString stringWithFormat:@"%@", mmaDirection[indexPath.row]];
     }
     cell.lblLocation.adjustsFontSizeToFitWidth = YES;
-     */
+    
 //-------------------------------------------------------------------------------
 //Publish date
     NSString *strTemp;
@@ -806,8 +1042,24 @@ NSString    *strMap;
         strMap = @"http://maps.googleapis.com/maps/api/staticmap?size=600x300&path=fillcolor:0xAA000033|color:0xFFFFFF00|weight:5|";
         NSLog(@"\nstrMap %@", strMap);
         
-        strMap =  [strMap stringByAppendingString:mmaAreaPolygon[indexPath.row][0]];
-        NSLog(@"\nstrMap2 %@", strMap);
+        NSLog(@"indexPath.row %ld", (long)indexPath.row);
+        if (indexPath.row < mmaAreaPolygonAll.count)
+        {
+            //if (!(nil == mmaDirection) && !([@"" isEqual:mmaDirection]) && (mmaDirection.count > 0))
+            //{
+            for (int i = 0; i < [mmaAreaPolygonAll[indexPath.row] count]; i++)
+            {
+                strMap =  [strMap stringByAppendingString:mmaAreaPolygonAll[indexPath.row][i]];
+                NSLog(@"\nstrMap2 %@", strMap);
+                strMap =  [strMap stringByAppendingString:@" "];
+                NSLog(@"\nstrMap2 %@", strMap);
+            }
+
+            if ([strMap length] > 0)
+            {
+                strMap = [strMap substringToIndex:[strMap length] - 1];
+            }
+        }
 
         strMap = [strMap stringByReplacingOccurrencesOfString:@" " withString:@"|"];
         NSLog(@"\nstrMap3 %@", strMap);
@@ -961,28 +1213,27 @@ NSString    *strMap;
         cell.lblSevBar3.backgroundColor = [UIColor nLightGray85];
         cell.lblSevBar4.backgroundColor = [UIColor nLightGray85];
     }
-    
-    
-    
-    
     return cell;
 }
-/**********************************************************************************************
- Initialization
- **********************************************************************************************/
-- (void) buildMap
-{
-  
-    
-    //strTemp = [@"Actualizado a las " stringByAppendingString:[dateFormatter stringFromDate:now]];
-    
-    
-}
+
 //-------------------------------------------------------------------------------
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [self performSegueWithIdentifier:@"AlertDetailSegue" sender:self];
+    mintReqIndex = (int)indexPath.row;
 }
-
+/*
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSLog(@"segue from deals screen");
+    //addToCartViewContollerForItem
+    if([[segue identifier] isEqualToString:@"AlertDetailSegue"])
+    {
+        AlertDetails *vc = [segue destinationViewController];
+    }
+    
+}
+ */
 /*
 - (void) traverseElement:(TBXMLElement *)element {
     
