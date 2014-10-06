@@ -10,21 +10,7 @@
 #import <MediaPlayer/MediaPlayer.h>
 #import <QuartzCore/QuartzCore.h>
 
-#import "MPFoldEnumerations.h"
-#import "MPFlipEnumerations.h"
-
-enum
-{
-	MPTransitionModeFold,
-	MPTransitionModeFlip
-} typedef MPTransitionMode;
-
 @interface Welcome : UIViewController
-
-@property (assign, nonatomic) MPTransitionMode mode;
-@property (assign, nonatomic) NSUInteger style;
-@property (assign, nonatomic) MPFoldStyle foldStyle;
-@property (assign, nonatomic) MPFlipStyle flipStyle;
 
 //Video
 @property (strong, nonatomic) MPMoviePlayerController *moviePlayer;

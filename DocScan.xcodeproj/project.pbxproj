@@ -73,7 +73,6 @@
 		D173015D19CCFD6300CF6027 /* tabTips01@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D173015C19CCFD6300CF6027 /* tabTips01@2x.png */; };
 		D173015F19CCFE1100CF6027 /* tabTips02@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D173015E19CCFE1100CF6027 /* tabTips02@2x.png */; };
 		D17C9B9D19D0FBC200F9AEBA /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = D17C9B9C19D0FBC200F9AEBA /* license.txt */; };
-		D17C9BA019D1127000F9AEBA /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = D17C9B9E19D1127000F9AEBA /* README.md */; };
 		D17C9BA119D1127000F9AEBA /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = D17C9B9F19D1127000F9AEBA /* LICENSE */; };
 		D18CB2AD19B9056500BEF0EF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D18CB2AC19B9056500BEF0EF /* Foundation.framework */; };
 		D18CB2AF19B9056500BEF0EF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D18CB2AE19B9056500BEF0EF /* CoreGraphics.framework */; };
@@ -89,7 +88,7 @@
 		D18CB2D019B9056500BEF0EF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D18CB2AC19B9056500BEF0EF /* Foundation.framework */; };
 		D18CB2D119B9056500BEF0EF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D18CB2B019B9056500BEF0EF /* UIKit.framework */; };
 		D18CB2D919B9056500BEF0EF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D18CB2D719B9056500BEF0EF /* InfoPlist.strings */; };
-		D18CB2DB19B9056500BEF0EF /* AlertaMXTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D18CB2DA19B9056500BEF0EF /* AlertaMXTests.m */; };
+		D18CB2DB19B9056500BEF0EF /* DocScanTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D18CB2DA19B9056500BEF0EF /* DocScanTests.m */; };
 		D18CB2E619B90AAA00BEF0EF /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D18CB2E519B90AAA00BEF0EF /* MediaPlayer.framework */; };
 		D18CB2EA19B90C9E00BEF0EF /* rain01.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D18CB2E919B90C9E00BEF0EF /* rain01.mp4 */; };
 		D18CB2EE19B911DA00BEF0EF /* gifRain01.gif in Resources */ = {isa = PBXBuildFile; fileRef = D18CB2ED19B911DA00BEF0EF /* gifRain01.gif */; };
@@ -108,9 +107,6 @@
 		D18CB30E19BA6F5400BEF0EF /* imgFamily01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D18CB30D19BA6F5400BEF0EF /* imgFamily01.jpg */; };
 		D18CB31119BA780400BEF0EF /* gifRain02.gif in Resources */ = {isa = PBXBuildFile; fileRef = D18CB30F19BA780400BEF0EF /* gifRain02.gif */; };
 		D18CB31219BA780400BEF0EF /* gifRain03.gif in Resources */ = {isa = PBXBuildFile; fileRef = D18CB31019BA780400BEF0EF /* gifRain03.gif */; };
-		D18CB31E19BA7D0900BEF0EF /* MPAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = D18CB31519BA7D0900BEF0EF /* MPAnimation.m */; };
-		D18CB31F19BA7D0900BEF0EF /* MPFlipTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = D18CB31819BA7D0900BEF0EF /* MPFlipTransition.m */; };
-		D18CB32019BA7D0900BEF0EF /* MPTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = D18CB31C19BA7D0900BEF0EF /* MPTransition.m */; };
 		D18CB32219BA7D9E00BEF0EF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D18CB32119BA7D9E00BEF0EF /* QuartzCore.framework */; };
 		D18CBD4819C9DDFC0039220B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D18CBD4719C9DDFC0039220B /* CoreLocation.framework */; };
 		D18CBD6319CA99D70039220B /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = D18CBD4B19CA99D70039220B /* NSObject+SBJson.m */; };
@@ -259,14 +255,14 @@
 		D17C9B9C19D0FBC200F9AEBA /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
 		D17C9B9E19D1127000F9AEBA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = AlertaMX/README.md; sourceTree = "<group>"; };
 		D17C9B9F19D1127000F9AEBA /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = AlertaMX/LICENSE; sourceTree = "<group>"; };
-		D18CB2A919B9056500BEF0EF /* AlertaMX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlertaMX.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D18CB2A919B9056500BEF0EF /* DocScan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DocScan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D18CB2AC19B9056500BEF0EF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D18CB2AE19B9056500BEF0EF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		D18CB2B019B9056500BEF0EF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		D18CB2B419B9056500BEF0EF /* AlertaMX-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AlertaMX-Info.plist"; sourceTree = "<group>"; };
+		D18CB2B419B9056500BEF0EF /* DocScan-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DocScan-Info.plist"; sourceTree = "<group>"; };
 		D18CB2B619B9056500BEF0EF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D18CB2B819B9056500BEF0EF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D18CB2BA19B9056500BEF0EF /* AlertaMX-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AlertaMX-Prefix.pch"; sourceTree = "<group>"; };
+		D18CB2BA19B9056500BEF0EF /* DocScan-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DocScan-Prefix.pch"; sourceTree = "<group>"; };
 		D18CB2BB19B9056500BEF0EF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D18CB2BC19B9056500BEF0EF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D18CB2BF19B9056500BEF0EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/iPhone.storyboard; sourceTree = "<group>"; };
@@ -274,11 +270,11 @@
 		D18CB2C419B9056500BEF0EF /* Welcome.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Welcome.h; sourceTree = "<group>"; };
 		D18CB2C519B9056500BEF0EF /* Welcome.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Welcome.m; sourceTree = "<group>"; };
 		D18CB2C719B9056500BEF0EF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		D18CB2CD19B9056500BEF0EF /* AlertaMXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlertaMXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D18CB2CD19B9056500BEF0EF /* DocScanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DocScanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D18CB2CE19B9056500BEF0EF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		D18CB2D619B9056500BEF0EF /* AlertaMXTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AlertaMXTests-Info.plist"; sourceTree = "<group>"; };
+		D18CB2D619B9056500BEF0EF /* DocScanTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DocScanTests-Info.plist"; sourceTree = "<group>"; };
 		D18CB2D819B9056500BEF0EF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		D18CB2DA19B9056500BEF0EF /* AlertaMXTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlertaMXTests.m; sourceTree = "<group>"; };
+		D18CB2DA19B9056500BEF0EF /* DocScanTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DocScanTests.m; sourceTree = "<group>"; };
 		D18CB2E519B90AAA00BEF0EF /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		D18CB2E919B90C9E00BEF0EF /* rain01.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = rain01.mp4; sourceTree = "<group>"; };
 		D18CB2ED19B911DA00BEF0EF /* gifRain01.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gifRain01.gif; sourceTree = "<group>"; };
@@ -298,16 +294,6 @@
 		D18CB30D19BA6F5400BEF0EF /* imgFamily01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = imgFamily01.jpg; sourceTree = "<group>"; };
 		D18CB30F19BA780400BEF0EF /* gifRain02.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gifRain02.gif; sourceTree = "<group>"; };
 		D18CB31019BA780400BEF0EF /* gifRain03.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gifRain03.gif; sourceTree = "<group>"; };
-		D18CB31419BA7D0900BEF0EF /* MPAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAnimation.h; sourceTree = "<group>"; };
-		D18CB31519BA7D0900BEF0EF /* MPAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAnimation.m; sourceTree = "<group>"; };
-		D18CB31619BA7D0900BEF0EF /* MPFlipEnumerations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPFlipEnumerations.h; sourceTree = "<group>"; };
-		D18CB31719BA7D0900BEF0EF /* MPFlipTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPFlipTransition.h; sourceTree = "<group>"; };
-		D18CB31819BA7D0900BEF0EF /* MPFlipTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPFlipTransition.m; sourceTree = "<group>"; };
-		D18CB31919BA7D0900BEF0EF /* MPFoldEnumerations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPFoldEnumerations.h; sourceTree = "<group>"; };
-		D18CB31A19BA7D0900BEF0EF /* MPFoldTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPFoldTransition.h; sourceTree = "<group>"; };
-		D18CB31B19BA7D0900BEF0EF /* MPTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPTransition.h; sourceTree = "<group>"; };
-		D18CB31C19BA7D0900BEF0EF /* MPTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPTransition.m; sourceTree = "<group>"; };
-		D18CB31D19BA7D0900BEF0EF /* MPTransitionEnumerations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPTransitionEnumerations.h; sourceTree = "<group>"; };
 		D18CB32119BA7D9E00BEF0EF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		D18CBD4719C9DDFC0039220B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		D18CBD4A19CA99D70039220B /* NSObject+SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJson.h"; sourceTree = "<group>"; };
@@ -562,8 +548,8 @@
 			children = (
 				D17C9B9E19D1127000F9AEBA /* README.md */,
 				D17C9B9F19D1127000F9AEBA /* LICENSE */,
-				D18CB2B219B9056500BEF0EF /* AlertaMX */,
-				D18CB2D419B9056500BEF0EF /* AlertaMXTests */,
+				D18CB2B219B9056500BEF0EF /* DocScan */,
+				D18CB2D419B9056500BEF0EF /* DocScanTests */,
 				D18CB2AB19B9056500BEF0EF /* Frameworks */,
 				D18CB2AA19B9056500BEF0EF /* Products */,
 			);
@@ -572,8 +558,8 @@
 		D18CB2AA19B9056500BEF0EF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D18CB2A919B9056500BEF0EF /* AlertaMX.app */,
-				D18CB2CD19B9056500BEF0EF /* AlertaMXTests.xctest */,
+				D18CB2A919B9056500BEF0EF /* DocScan.app */,
+				D18CB2CD19B9056500BEF0EF /* DocScanTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -610,13 +596,12 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D18CB2B219B9056500BEF0EF /* AlertaMX */ = {
+		D18CB2B219B9056500BEF0EF /* DocScan */ = {
 			isa = PBXGroup;
 			children = (
 				D17300F319CBF1F300CF6027 /* InfiniteScrollPicker */,
 				D18CBD4919CA99D70039220B /* json */,
 				D19D58B019BF742300414C96 /* TBMXML */,
-				D18CB31319BA7D0900BEF0EF /* FoldTransitions */,
 				D18CB2F019B9139A00BEF0EF /* GIFAnimation */,
 				D167DCC819C22BAD0064082D /* Customized */,
 				D18CB2E419B905D900BEF0EF /* Controllers */,
@@ -627,6 +612,7 @@
 				D18CB2C719B9056500BEF0EF /* Images.xcassets */,
 				D18CB2B319B9056500BEF0EF /* Supporting Files */,
 			);
+			name = DocScan;
 			path = AlertaMX;
 			sourceTree = "<group>";
 		};
@@ -636,27 +622,28 @@
 				D17C9B9B19D0FBC200F9AEBA /* Licence */,
 				D18CB2F619BA23DB00BEF0EF /* Fonts */,
 				D18CB2E819B90C9E00BEF0EF /* imgs */,
-				D18CB2B419B9056500BEF0EF /* AlertaMX-Info.plist */,
+				D18CB2B419B9056500BEF0EF /* DocScan-Info.plist */,
 				D18CB2B519B9056500BEF0EF /* InfoPlist.strings */,
 				D18CB2B819B9056500BEF0EF /* main.m */,
-				D18CB2BA19B9056500BEF0EF /* AlertaMX-Prefix.pch */,
+				D18CB2BA19B9056500BEF0EF /* DocScan-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D18CB2D419B9056500BEF0EF /* AlertaMXTests */ = {
+		D18CB2D419B9056500BEF0EF /* DocScanTests */ = {
 			isa = PBXGroup;
 			children = (
-				D18CB2DA19B9056500BEF0EF /* AlertaMXTests.m */,
+				D18CB2DA19B9056500BEF0EF /* DocScanTests.m */,
 				D18CB2D519B9056500BEF0EF /* Supporting Files */,
 			);
+			name = DocScanTests;
 			path = AlertaMXTests;
 			sourceTree = "<group>";
 		};
 		D18CB2D519B9056500BEF0EF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D18CB2D619B9056500BEF0EF /* AlertaMXTests-Info.plist */,
+				D18CB2D619B9056500BEF0EF /* DocScanTests-Info.plist */,
 				D18CB2D719B9056500BEF0EF /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -791,23 +778,6 @@
 			name = img;
 			sourceTree = "<group>";
 		};
-		D18CB31319BA7D0900BEF0EF /* FoldTransitions */ = {
-			isa = PBXGroup;
-			children = (
-				D18CB31419BA7D0900BEF0EF /* MPAnimation.h */,
-				D18CB31519BA7D0900BEF0EF /* MPAnimation.m */,
-				D18CB31619BA7D0900BEF0EF /* MPFlipEnumerations.h */,
-				D18CB31719BA7D0900BEF0EF /* MPFlipTransition.h */,
-				D18CB31819BA7D0900BEF0EF /* MPFlipTransition.m */,
-				D18CB31919BA7D0900BEF0EF /* MPFoldEnumerations.h */,
-				D18CB31A19BA7D0900BEF0EF /* MPFoldTransition.h */,
-				D18CB31B19BA7D0900BEF0EF /* MPTransition.h */,
-				D18CB31C19BA7D0900BEF0EF /* MPTransition.m */,
-				D18CB31D19BA7D0900BEF0EF /* MPTransitionEnumerations.h */,
-			);
-			path = FoldTransitions;
-			sourceTree = "<group>";
-		};
 		D18CBD4919CA99D70039220B /* json */ = {
 			isa = PBXGroup;
 			children = (
@@ -872,9 +842,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D18CB2A819B9056500BEF0EF /* AlertaMX */ = {
+		D18CB2A819B9056500BEF0EF /* DocScan */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D18CB2DE19B9056500BEF0EF /* Build configuration list for PBXNativeTarget "AlertaMX" */;
+			buildConfigurationList = D18CB2DE19B9056500BEF0EF /* Build configuration list for PBXNativeTarget "DocScan" */;
 			buildPhases = (
 				D18CB2A519B9056500BEF0EF /* Sources */,
 				D18CB2A619B9056500BEF0EF /* Frameworks */,
@@ -884,14 +854,14 @@
 			);
 			dependencies = (
 			);
-			name = AlertaMX;
+			name = DocScan;
 			productName = AlertaMX;
-			productReference = D18CB2A919B9056500BEF0EF /* AlertaMX.app */;
+			productReference = D18CB2A919B9056500BEF0EF /* DocScan.app */;
 			productType = "com.apple.product-type.application";
 		};
-		D18CB2CC19B9056500BEF0EF /* AlertaMXTests */ = {
+		D18CB2CC19B9056500BEF0EF /* DocScanTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D18CB2E119B9056500BEF0EF /* Build configuration list for PBXNativeTarget "AlertaMXTests" */;
+			buildConfigurationList = D18CB2E119B9056500BEF0EF /* Build configuration list for PBXNativeTarget "DocScanTests" */;
 			buildPhases = (
 				D18CB2C919B9056500BEF0EF /* Sources */,
 				D18CB2CA19B9056500BEF0EF /* Frameworks */,
@@ -902,9 +872,9 @@
 			dependencies = (
 				D18CB2D319B9056500BEF0EF /* PBXTargetDependency */,
 			);
-			name = AlertaMXTests;
+			name = DocScanTests;
 			productName = AlertaMXTests;
-			productReference = D18CB2CD19B9056500BEF0EF /* AlertaMXTests.xctest */;
+			productReference = D18CB2CD19B9056500BEF0EF /* DocScanTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -924,7 +894,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D18CB2A419B9056500BEF0EF /* Build configuration list for PBXProject "AlertaMX" */;
+			buildConfigurationList = D18CB2A419B9056500BEF0EF /* Build configuration list for PBXProject "DocScan" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -937,8 +907,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D18CB2A819B9056500BEF0EF /* AlertaMX */,
-				D18CB2CC19B9056500BEF0EF /* AlertaMXTests */,
+				D18CB2A819B9056500BEF0EF /* DocScan */,
+				D18CB2CC19B9056500BEF0EF /* DocScanTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1051,9 +1021,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D18CB31F19BA7D0900BEF0EF /* MPFlipTransition.m in Sources */,
 				D18CBD6719CA99D70039220B /* SBJsonStreamParserAdapter.m in Sources */,
-				D18CB32019BA7D0900BEF0EF /* MPTransition.m in Sources */,
 				D18CBD6619CA99D70039220B /* SBJsonStreamParserAccumulator.m in Sources */,
 				D167DCCD19C241030064082D /* cellAlerts.m in Sources */,
 				D19D58A519BF4E1A00414C96 /* Instructions.m in Sources */,
@@ -1080,10 +1048,8 @@
 				D19D58BA19BF742300414C96 /* TBXML+HTTP.m in Sources */,
 				D18CBD6419CA99D70039220B /* SBJsonParser.m in Sources */,
 				D19D58AB19BF4E3E00414C96 /* Help.m in Sources */,
-				D17C9BA019D1127000F9AEBA /* README.md in Sources */,
 				D19D58A219BF4DF200414C96 /* RiskZones.m in Sources */,
 				D18CBD6D19CA99D70039220B /* SBJsonUTF8Stream.m in Sources */,
-				D18CB31E19BA7D0900BEF0EF /* MPAnimation.m in Sources */,
 				D18CB2F319B9139A00BEF0EF /* UIImage+animatedGIF.m in Sources */,
 				D1B9E53C19D0BFE20047590C /* cellFamily.m in Sources */,
 				D18CB2BD19B9056500BEF0EF /* AppDelegate.m in Sources */,
@@ -1095,7 +1061,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D18CB2DB19B9056500BEF0EF /* AlertaMXTests.m in Sources */,
+				D18CB2DB19B9056500BEF0EF /* DocScanTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1104,7 +1070,7 @@
 /* Begin PBXTargetDependency section */
 		D18CB2D319B9056500BEF0EF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D18CB2A819B9056500BEF0EF /* AlertaMX */;
+			target = D18CB2A819B9056500BEF0EF /* DocScan */;
 			targetProxy = D18CB2D219B9056500BEF0EF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1232,13 +1198,13 @@
 					"$(PROJECT_DIR)/AlertaMX/GoogleMaps",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "AlertaMX/AlertaMX-Prefix.pch";
+				GCC_PREFIX_HEADER = "AlertaMX/DocScan-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"/Users/walter/Projects/AlertaMX/AlertaMX/pushwoosh-ios-sdk-master/Framework/",
 				);
-				INFOPLIST_FILE = "AlertaMX/AlertaMX-Info.plist";
+				INFOPLIST_FILE = "AlertaMX/DocScan-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
@@ -1246,8 +1212,8 @@
 					"-ObjC",
 					"-all_load",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "3d3d9dff-a03b-4b6c-9c96-e5385b627b7d";
+				PRODUCT_NAME = DocScan;
+				PROVISIONING_PROFILE = "";
 				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1266,13 +1232,13 @@
 					"$(PROJECT_DIR)/AlertaMX/GoogleMaps",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "AlertaMX/AlertaMX-Prefix.pch";
+				GCC_PREFIX_HEADER = "AlertaMX/DocScan-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"/Users/walter/Projects/AlertaMX/AlertaMX/pushwoosh-ios-sdk-master/Framework/",
 				);
-				INFOPLIST_FILE = "AlertaMX/AlertaMX-Info.plist";
+				INFOPLIST_FILE = "AlertaMX/DocScan-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
@@ -1280,8 +1246,8 @@
 					"-ObjC",
 					"-all_load",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1a120e22-7925-42dc-a6fd-bc7830735f8a";
+				PRODUCT_NAME = DocScan;
+				PROVISIONING_PROFILE = "";
 				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1302,8 +1268,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "AlertaMXTests/AlertaMXTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "AlertaMXTests/DocScanTests-Info.plist";
+				PRODUCT_NAME = DocScanTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -1320,8 +1286,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AlertaMX/AlertaMX-Prefix.pch";
-				INFOPLIST_FILE = "AlertaMXTests/AlertaMXTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "AlertaMXTests/DocScanTests-Info.plist";
+				PRODUCT_NAME = DocScanTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -1330,7 +1296,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D18CB2A419B9056500BEF0EF /* Build configuration list for PBXProject "AlertaMX" */ = {
+		D18CB2A419B9056500BEF0EF /* Build configuration list for PBXProject "DocScan" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D18CB2DC19B9056500BEF0EF /* Debug */,
@@ -1339,7 +1305,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D18CB2DE19B9056500BEF0EF /* Build configuration list for PBXNativeTarget "AlertaMX" */ = {
+		D18CB2DE19B9056500BEF0EF /* Build configuration list for PBXNativeTarget "DocScan" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D18CB2DF19B9056500BEF0EF /* Debug */,
@@ -1348,7 +1314,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D18CB2E119B9056500BEF0EF /* Build configuration list for PBXNativeTarget "AlertaMXTests" */ = {
+		D18CB2E119B9056500BEF0EF /* Build configuration list for PBXNativeTarget "DocScanTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D18CB2E219B9056500BEF0EF /* Debug */,

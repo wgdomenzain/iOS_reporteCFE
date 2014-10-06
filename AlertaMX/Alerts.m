@@ -210,11 +210,12 @@ NSString    *strMap;
  **********************************************************************************************/
 - (IBAction)btnItemPressed:(UIButton*)sender
 {
+    /*
     NSString *strItem = [NSString stringWithFormat:@"%d", (int)sender.tag - 1];
     dispatch_async(dispatch_get_main_queue(), ^{
         NSLog(@"Tag btnItemPressed %ld",(long)sender.tag);
-
     });
+     */
 }
 - (IBAction)btnMenuAlertsPressed:(id)sender
 {
@@ -514,7 +515,7 @@ NSString    *strMap;
 - (void) traverseElement:(TBXMLElement *)element {
     do {
         // Display the name of the element and description
-        NSString * description          = [TBXML textForElement:element];
+        //NSString * description          = [TBXML textForElement:element];
         //NSLog(@"ELEMENT %@ = %@", [TBXML elementName:element], description);
         
         if (element->firstChild)
@@ -1096,7 +1097,7 @@ NSString    *strMap;
                                            NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
                                            NSString *documentsPath = [paths objectAtIndex:0]; //Get the docs directory
                                            NSString *filePath = [documentsPath stringByAppendingPathComponent:strPhotoPath]; //Add the file name
-                                           //[pngData writeToFile:filePath atomically:YES];
+                                           [pngData writeToFile:filePath atomically:YES];
                                            NSLog(@"strPhotoPath %@", strPhotoPath);
                                            //NSLog(@"pngData %@", pngData);
                                            image = nil;

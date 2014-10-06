@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface AlertaMXTests : XCTestCase
+@interface DocScanTests : XCTestCase
 
 @end
 
-@implementation AlertaMXTests
+@implementation DocScanTests
 
 - (void)setUp
 {

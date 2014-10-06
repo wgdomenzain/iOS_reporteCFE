@@ -9,8 +9,7 @@
 #import "Welcome.h"
 #import "Declarations.h"
 #import "UIImage+animatedGIF.h"
-#import "MPFoldTransition.h"
-#import "MPFlipTransition.h"
+
 #import "TabBar.h"
 
 @interface Welcome ()

@@ -199,7 +199,6 @@ UIButton *btnItem;
     [mapView_[[strItem intValue]] clear];
     
     GMSMarker *marker;
-    GMSCircle *circ;
     
     //for (int j = 0; j <  [mmaGJFeatures[[strItem intValue]] count]; j++)
     //{
