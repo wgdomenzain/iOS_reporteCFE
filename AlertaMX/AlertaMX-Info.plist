@@ -29,9 +29,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>Pushwoosh_APPID</key>
-	<string>64DD0-96DF0</string>
+	<string>B6C52-D27A5</string>
 	<key>Pushwoosh_AUTO</key>
-	<true/>
+	<false/>
 	<key>Supported background modes</key>
 	<array>
 		<string>remote-notification</string>

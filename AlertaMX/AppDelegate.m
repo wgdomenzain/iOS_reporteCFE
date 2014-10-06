@@ -44,7 +44,6 @@ NSString *const SCSessionStateChangedNotification =
     
     [[UIApplication sharedApplication] registerForRemoteNotificationTypes: (UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound)];
     
-    
     pushManager = [PushNotificationManager pushManager];
     pushManager.delegate = self;
     [pushManager handlePushReceived:launchOptions];
@@ -52,7 +51,6 @@ NSString *const SCSessionStateChangedNotification =
     if ([launchOptions objectForKey:UIApplicationLaunchOptionsLocationKey]) {
         
         [pushManager startLocationTracking];
-        
     }
     
      [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
