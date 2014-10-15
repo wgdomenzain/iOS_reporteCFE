@@ -7,12 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Declarations.h"
 #import "InfiniteScrollPicker.h"
 #import <QuartzCore/QuartzCore.h>
 #import <CoreText/CoreText.h>
 #import <MobileCoreServices/MobileCoreServices.h>
+#import "KLHorizontalSelect.h"
 
-@interface Alerts : UIViewController<UITableViewDelegate, UITableViewDataSource>
+
+@interface PatientSearch : UIViewController<UITableViewDelegate, UITableViewDataSource, KLHorizontalSelectDelegate, CLLocationManagerDelegate>
+//Variables
+@property (nonatomic, strong) IBOutlet KLHorizontalSelect* horizontalSelect;
 
 //Images
 @property (strong, nonatomic) IBOutlet UIButton *imgHelp;
@@ -40,6 +45,7 @@
 @property (strong, nonatomic) IBOutlet UIView *viewHelp;
 @property (strong, nonatomic) IBOutlet UIView *viewAlerts;
 @property (strong, nonatomic) IBOutlet UIView *viewAlpha;
+@property (strong, nonatomic) IBOutlet UIView *viewSelectBar;
 
 
 //Actions

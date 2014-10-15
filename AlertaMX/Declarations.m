@@ -102,9 +102,16 @@ UIApplication       *mApp;
 
 //BOOL
 BOOL                mboAlreadyRegistered;
+BOOL                mboFirstLoad = TRUE;
 
 //Int
 int                 mintReqIndex;
+
+CLLocationManager   *mlocationManager;
+CLLocation          *mlocation;
+
+float               mlatitude;
+float               mlongitude;
 
 //NSDictionary
 NSDictionary        *mGeoJson[10];

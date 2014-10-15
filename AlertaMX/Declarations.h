@@ -92,6 +92,8 @@
 #define nBlack70                colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:0.7
 #define nRedMap                 colorWithRed:170/255.0 green:0/255.0 blue:0/255.0 alpha:0.5
 #define nRedMap100              colorWithRed:170/255.0 green:0/255.0 blue:0/255.0 alpha:1.0
+
+#define nBlueGoogle100          colorWithRed:74/255.0 green:139/255.0 blue:246/255.0 alpha:1.00
 //#define nBlack70                colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:0.7
 
 //Constants
@@ -202,9 +204,16 @@ extern UIApplication       *mApp;
 
 //BOOL
 extern BOOL                mboAlreadyRegistered;
+extern BOOL                mboFirstLoad;
 
 //Int
-int                         mintReqIndex;
+extern  int                         mintReqIndex;
+
+extern  CLLocationManager   *mlocationManager;
+extern  CLLocation          *mlocation;
+
+extern  float               mlatitude;
+extern  float               mlongitude;
 
 //NSDictionary
 extern  NSDictionary        *mGeoJson[10];

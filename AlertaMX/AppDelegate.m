@@ -40,8 +40,9 @@ NSString *const SCSessionStateChangedNotification =
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
-    [GMSServices provideAPIKey:@"AIzaSyCU7COsXav4ABapevKDuYqPHrYm6Z4rJkA"];
+    [GMSServices provideAPIKey:@"AIzaSyAMaGnotbipo1oDpL2Hn14QlP8RbvZA2m4"];
     
+    /*
     [[UIApplication sharedApplication] registerForRemoteNotificationTypes: (UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound)];
     
     pushManager = [PushNotificationManager pushManager];
@@ -52,6 +53,7 @@ NSString *const SCSessionStateChangedNotification =
         
         [pushManager startLocationTracking];
     }
+     */
     
      [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
     return YES;

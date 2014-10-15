@@ -25,8 +25,9 @@
 @property (strong, nonatomic) IBOutlet UILabel *lblMainTitle2;
 @property (strong, nonatomic) IBOutlet UILabel *lblMainDot;
 @property (strong, nonatomic) IBOutlet UILabel *lblExplanation;
-@property (strong, nonatomic) IBOutlet UILabel *lblBtnTutorial;
+@property (strong, nonatomic) IBOutlet UILabel *lblBtnDoctor;
 @property (strong, nonatomic) IBOutlet UILabel *lblBtnEnter;
+@property (strong, nonatomic) IBOutlet UILabel *lblBtnPatient;
 
 //Images
 
@@ -36,7 +37,8 @@
 
 
 //Actions
-- (IBAction)btnStartTutorialPressed:(id)sender;
+- (IBAction)btnDoctorPressed:(id)sender;
 - (IBAction)btnEnterPressed:(id)sender;
+- (IBAction)btnPatientPressed:(id)sender;
 
 @end

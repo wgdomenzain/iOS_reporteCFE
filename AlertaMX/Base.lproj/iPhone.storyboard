@@ -13,50 +13,68 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="App Oficial del Gobierno de la República para la alerta de desastres" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="v3g-EQ-VzJ" userLabel="lblDescription">
-                                <rect key="frame" x="25" y="232" width="270" height="60"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conecta con tu doctor" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="v3g-EQ-VzJ" userLabel="lblDescription">
+                                <rect key="frame" x="25" y="226" width="270" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="alerta" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Xrt-TH-R2E" userLabel="lblAlerta">
-                                <rect key="frame" x="75" y="192" width="100" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Doctorpedia" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Xrt-TH-R2E" userLabel="lblTitle1">
+                                <rect key="frame" x="0.0" y="192" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MX" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tgW-le-0P9" userLabel="lblMX">
-                                <rect key="frame" x="174" y="192" width="100" height="44"/>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tgW-le-0P9" userLabel="lblTitle2">
+                                <rect key="frame" x="157" y="192" width="100" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="·" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hRR-iT-zzX" userLabel="lblDot">
-                                <rect key="frame" x="165" y="192" width="20" height="44"/>
+                                <rect key="frame" x="150" y="192" width="20" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ver cómo funciona" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Dcq-rd-PBr" userLabel="lblTutorial">
-                                <rect key="frame" x="12" y="450" width="296" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
-                                <color key="backgroundColor" red="0.29019607843137252" green="0.54509803921568623" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Soy Doctor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Qv7-cp-Fiu" userLabel="lblDoctor">
+                                <rect key="frame" x="12" y="390" width="296" height="42"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" red="0.20784313725490194" green="0.70980392156862748" blue="0.70588235294117641" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="jF6-CN-bZh" userLabel="btnTutorial">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="tEq-zO-Ks8" userLabel="btnDoctor">
+                                <rect key="frame" x="0.0" y="390" width="320" height="42"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnDoctorPressed:" destination="MbF-3C-hLP" eventType="touchUpInside" id="A94-x9-n6w"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Soy Paciente" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Dcq-rd-PBr" userLabel="lblPatient">
+                                <rect key="frame" x="12" y="450" width="296" height="42"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" red="0.29019609093666077" green="0.54509806632995605" blue="0.96470588445663452" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="jF6-CN-bZh" userLabel="btnPatient">
                                 <rect key="frame" x="0.0" y="450" width="320" height="42"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="btnStartTutorialPressed:" destination="MbF-3C-hLP" eventType="touchUpInside" id="BHX-LJ-saz"/>
+                                    <action selector="btnPatientPressed:" destination="MbF-3C-hLP" eventType="touchUpInside" id="F6G-Te-3eD"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="J9k-Ic-tAT" userLabel="btnEnter">
@@ -69,15 +87,15 @@
                                     <action selector="btnEnterPressed:" destination="MbF-3C-hLP" eventType="touchUpInside" id="s2D-CS-VzK"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿Ya sabes cómo funciona?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wp5-UU-igf" userLabel="lblEnter">
-                                <rect key="frame" x="12" y="508" width="190" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿Qué es Doctorpedia?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wp5-UU-igf" userLabel="lblEnter">
+                                <rect key="frame" x="0.0" y="508" width="320" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" alpha="0.79999999999999982" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon__512x512.png" id="xTw-BQ-Bbl" userLabel="imgLogo">
+                            <imageView userInteractionEnabled="NO" alpha="0.79999999999999982" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgLogo04.jpg" id="xTw-BQ-Bbl" userLabel="imgLogo">
                                 <rect key="frame" x="100" y="50" width="120" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -85,8 +103,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="lblBtnDoctor" destination="Qv7-cp-Fiu" id="CZf-ic-fiT"/>
                         <outlet property="lblBtnEnter" destination="wp5-UU-igf" id="SfN-YA-H0w"/>
-                        <outlet property="lblBtnTutorial" destination="Dcq-rd-PBr" id="U7D-p7-GIV"/>
+                        <outlet property="lblBtnPatient" destination="Dcq-rd-PBr" id="0m8-oY-wOv"/>
                         <outlet property="lblExplanation" destination="v3g-EQ-VzJ" id="az9-FO-wUH"/>
                         <outlet property="lblMainDot" destination="hRR-iT-zzX" id="y8J-Rh-9w9"/>
                         <outlet property="lblMainTitle" destination="Xrt-TH-R2E" id="aqm-R0-YAx"/>
@@ -339,7 +358,7 @@
                                         <color key="backgroundColor" red="0.99215692280000001" green="0.95686280729999995" blue="0.0039215688589999999" alpha="1" colorSpace="deviceRGB"/>
                                     </view>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="y4L-9Q-bNF" userLabel="lblTitle">
-                                        <rect key="frame" x="0.0" y="110" width="160" height="84"/>
+                                        <rect key="frame" x="0.0" y="109.99999929807109" width="160" height="84"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinY="YES" heightSizable="YES"/>
                                         <string key="text">Zonas de
 Riesgo</string>
@@ -534,12 +553,12 @@ Familia</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-713" y="-605"/>
+            <point key="canvasLocation" x="-1133" y="-545"/>
         </scene>
-        <!--Alerts-->
+        <!--Patient Search-->
         <scene sceneID="FJ2-gx-fgn">
             <objects>
-                <viewController storyboardIdentifier="Alerts" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xJn-qT-qOC" customClass="Alerts" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Alerts" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xJn-qT-qOC" customClass="PatientSearch" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YVW-zc-Otk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -552,7 +571,7 @@ Familia</string>
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alertas" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GEI-gK-Suj" userLabel="lblTitle">
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Búsqueda" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GEI-gK-Suj" userLabel="lblTitle">
                                                 <rect key="frame" x="46" y="23" width="100" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
@@ -591,7 +610,7 @@ Familia</string>
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.85098039215686272" green="0.29019607843137252" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.29019609093666077" green="0.54509806632995605" blue="0.96470588445663452" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                     <view contentMode="scaleToFill" id="l8B-9s-hxA" userLabel="SelectBar">
                                         <rect key="frame" x="0.0" y="59" width="320" height="49"/>
@@ -952,7 +971,7 @@ presente muy cerca</string>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="tabAlert02.png" id="tmD-ee-azL" userLabel="tabBarItem"/>
+                    <tabBarItem key="tabBarItem" title="" image="search02.png" id="tmD-ee-azL" userLabel="tabBarItem"/>
                     <navigationItem key="navigationItem" id="sXz-yj-Cdq"/>
                     <connections>
                         <outlet property="imgHelp" destination="PrW-Lu-R7k" id="TqY-fB-Rgm"/>
@@ -969,12 +988,13 @@ presente muy cerca</string>
                         <outlet property="viewAlerts" destination="C2L-q9-jVg" id="N74-0n-cFa"/>
                         <outlet property="viewAlpha" destination="GjV-kv-jDc" id="Alk-Xs-KzO"/>
                         <outlet property="viewHelp" destination="Z1K-Mb-hUk" id="fhI-Gj-3In"/>
+                        <outlet property="viewSelectBar" destination="l8B-9s-hxA" id="N6H-8J-9n0"/>
                         <segue destination="7kj-0n-51h" kind="push" identifier="AlertDetailSegue" id="ojW-iW-NPX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QqP-Oh-Q7y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-713" y="1790"/>
+            <point key="canvasLocation" x="-713" y="996"/>
         </scene>
         <!--Alert Details-->
         <scene sceneID="ycW-wf-OIP">
@@ -1402,27 +1422,59 @@ Los datos contenidos en el presente documento, forman parte de un producto pilot
             </objects>
             <point key="canvasLocation" x="-237" y="1790"/>
         </scene>
-        <!--Item-->
-        <scene sceneID="a4q-qh-ijx">
+        <!--Item 2-->
+        <scene sceneID="Ih3-qO-aLm">
             <objects>
-                <navigationController id="kOa-eO-IHc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="hIS-sl-zxJ"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dsr-KE-v01">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="xJn-qT-qOC" kind="relationship" relationship="rootViewController" id="MFb-1C-kti"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="f2o-oO-qix" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="TJl-HS-3cR" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rWn-VO-SGi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="Os3-76-BuY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gC6-77-lHD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-713" y="996"/>
+            <point key="canvasLocation" x="-237" y="-1139"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="06b-uo-i7b">
+            <objects>
+                <viewController id="fgS-xf-Wpq" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uk3-vu-SVa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="7u1-79-u15"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LbE-Cz-F7a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-713" y="-1139"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Nx0-oP-Tcf">
+            <objects>
+                <tabBarController storyboardIdentifier="TabBarDoctor" id="2JT-oz-eQT" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="082-c3-EaY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="fgS-xf-Wpq" kind="relationship" relationship="viewControllers" id="LZM-eI-umd"/>
+                        <segue destination="TJl-HS-3cR" kind="relationship" relationship="viewControllers" id="y8E-yo-ONr"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fUC-fQ-iDF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="217" y="-452"/>
         </scene>
         <!--Tab Bar-->
         <scene sceneID="B5h-W7-sXr">
             <objects>
-                <tabBarController storyboardIdentifier="TabBar" definesPresentationContext="YES" id="zJH-uH-RVr" customClass="TabBar" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarPatient" definesPresentationContext="YES" id="zJH-uH-RVr" customClass="TabBar" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="k5A-p6-jZO">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
@@ -1430,10 +1482,10 @@ Los datos contenidos en el presente documento, forman parte de un producto pilot
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="kOa-eO-IHc" kind="relationship" relationship="viewControllers" id="DKS-vv-wGe"/>
-                        <segue destination="hlJ-br-YEQ" kind="relationship" relationship="viewControllers" id="7qE-eB-qmU"/>
-                        <segue destination="iOB-Ms-UCb" kind="relationship" relationship="viewControllers" id="oB7-Qw-sil"/>
-                        <segue destination="dX3-D0-fM7" kind="relationship" relationship="viewControllers" id="HqE-JJ-gqd"/>
+                        <segue destination="xJn-qT-qOC" kind="relationship" relationship="viewControllers" id="LVO-UH-7y0"/>
+                        <segue destination="hlJ-br-YEQ" kind="relationship" relationship="viewControllers" id="t5b-50-PWA"/>
+                        <segue destination="iOB-Ms-UCb" kind="relationship" relationship="viewControllers" id="Mnz-oJ-aTQ"/>
+                        <segue destination="dX3-D0-fM7" kind="relationship" relationship="viewControllers" id="Ozf-tK-Rbn"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o3A-EC-CQm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1452,7 +1504,7 @@ Los datos contenidos en el presente documento, forman parte de un producto pilot
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zonas de Riesgo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="m0D-gB-lmf" userLabel="lblTitle">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Citas" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="m0D-gB-lmf" userLabel="lblTitle">
                                         <rect key="frame" x="46" y="20" width="187" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
@@ -1474,7 +1526,7 @@ Los datos contenidos en el presente documento, forman parte de un producto pilot
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.94509803921568625" green="0.72941176470588232" blue="0.24313725490196078" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="backgroundColor" red="0.29019609093666077" green="0.54509806632995605" blue="0.96470588445663452" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" id="VNw-uG-byE" userLabel="SelectBar">
                                 <rect key="frame" x="0.0" y="59" width="320" height="49"/>
@@ -1543,8 +1595,8 @@ Los datos contenidos en el presente documento, forman parte de un producto pilot
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="tabRiskZone04.png" id="Yqn-zZ-Hfj" userLabel="TabBarItem">
-                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                    <tabBarItem key="tabBarItem" title="" image="calendar02.png" id="Yqn-zZ-Hfj" userLabel="TabBarItem">
+                        <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="-4"/>
                     </tabBarItem>
                     <connections>
                         <outlet property="lblTitleRiskZones" destination="m0D-gB-lmf" id="8W8-a9-KLc"/>
@@ -1568,7 +1620,7 @@ Los datos contenidos en el presente documento, forman parte de un producto pilot
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instrucciones de Seguridad" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="c4H-Fk-n2v" userLabel="lblTitle">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preguntas Privadas" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="c4H-Fk-n2v" userLabel="lblTitle">
                                         <rect key="frame" x="46" y="25" width="269" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
@@ -1591,12 +1643,12 @@ Los datos contenidos en el presente documento, forman parte de un producto pilot
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.1921568662" green="0.55294120309999995" blue="0.16078431900000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.29019609093666077" green="0.54509806632995605" blue="0.96470588445663452" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="tabTips02.png" id="FXO-8W-SWb">
+                    <tabBarItem key="tabBarItem" title="" image="chat03.png" id="FXO-8W-SWb">
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
                     </tabBarItem>
                     <connections>
@@ -1619,7 +1671,7 @@ Los datos contenidos en el presente documento, forman parte de un producto pilot
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mi Familia" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="84i-C7-j5r" userLabel="lblTitle">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preguntas Públicas" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="84i-C7-j5r" userLabel="lblTitle">
                                         <rect key="frame" x="46" y="25" width="269" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
@@ -1677,7 +1729,7 @@ Los datos contenidos en el presente documento, forman parte de un producto pilot
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.2901960784" green="0.5450980392" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.29019609093666077" green="0.54509806632995605" blue="0.96470588445663452" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" id="SLr-C4-uNk" userLabel="viewRegister">
                                 <rect key="frame" x="0.0" y="64" width="320" height="455"/>
@@ -2014,12 +2066,14 @@ Para añadir algún familiar o amigo, ingresa su número de celular.</string>
         <image name="LandingImages_Screen2.png" width="640" height="217"/>
         <image name="LandingImages_Screen3.png" width="640" height="217"/>
         <image name="LandingImages_Screen4.png" width="640" height="218"/>
+        <image name="calendar02.png" width="30" height="30"/>
+        <image name="chat03.png" width="31" height="31"/>
         <image name="ic_action_new.png" width="96" height="96"/>
-        <image name="icon__512x512.png" width="513" height="513"/>
         <image name="imgAlerts01.jpg" width="1536" height="1017"/>
         <image name="imgFamily01.jpg" width="450" height="299"/>
         <image name="imgInstructions02.jpg" width="490" height="325"/>
         <image name="imgLeftArrow01.png" width="88" height="117"/>
+        <image name="imgLogo04.jpg" width="536" height="536"/>
         <image name="imgMenu02.png" width="419" height="424"/>
         <image name="imgRefresh08.png" width="55" height="51"/>
         <image name="imgRescue03.jpg" width="620" height="378"/>
@@ -2027,10 +2081,8 @@ Para añadir algún familiar o amigo, ingresa su número de celular.</string>
         <image name="imgSOSicon01.png" width="500" height="500"/>
         <image name="imgStaticmap01.png" width="600" height="300"/>
         <image name="imgWarning01.png" width="512" height="512"/>
-        <image name="tabAlert02.png" width="30" height="30"/>
+        <image name="search02.png" width="30" height="30"/>
         <image name="tabFamily03.png" width="33" height="33"/>
-        <image name="tabRiskZone04.png" width="31" height="31"/>
-        <image name="tabTips02.png" width="33" height="33"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
