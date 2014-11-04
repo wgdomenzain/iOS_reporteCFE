@@ -42,6 +42,7 @@ NSString        *strUserLocation = @"None";
     // Do any additional setup after loading the view.
     [self initViewController];
     [self initVariables];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -61,12 +62,12 @@ NSString        *strUserLocation = @"None";
         
         self.lblExplanation.alpha   = 1.0;
         self.lblBtnEnter.alpha      = 1.0;
-        self.lblBtnDoctor.alpha   = 1.0;
+        self.lblBtnDoctor.alpha     = 1.0;
         lblEnter.alpha              = 1.0;
-        self.lblMainDot.hidden          = NO;
     }
     completion:^(BOOL completed)
     {
+        self.lblMainDot.hidden          = NO;
     }];
 }
 /**********************************************************************************************
@@ -78,7 +79,36 @@ NSString        *strUserLocation = @"None";
     mUserDefaults       = [NSUserDefaults standardUserDefaults];
     
     //Arrays
-    //mmaMsgID            = [[NSMutableArray alloc] init];
+    if (!(nil == [mUserDefaults objectForKey:pmstrPlaces]) && !([@"" isEqual:[mUserDefaults objectForKey:pmstrPlaces]]))
+    {
+        mJsonPlaces = [mUserDefaults objectForKey:pmstrPlaces];
+        [self.Declarations parsePlaces];
+    }
+    if (!(nil == [mUserDefaults objectForKey:pmstrLogin]) && !([@"" isEqual:[mUserDefaults objectForKey:pmstrLogin]]))
+    {
+        mJsonLogin = [mUserDefaults objectForKey:pmstrLogin];
+        [self.Declarations parseReports];
+    }
+    if (!(nil == [mUserDefaults objectForKey:pmstrGetUserReport]) && !([@"" isEqual:[mUserDefaults objectForKey:pmstrGetUserReport]]))
+    {
+        mJsonGetUserReport = [mUserDefaults objectForKey:pmstrGetUserReport];
+        [self.Declarations parseGetUserReport];
+    }
+    
+    ACAccountStore *accountStore = [[ACAccountStore alloc] init];
+    ACAccountType *accountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
+    [accountStore requestAccessToAccountsWithType:accountType options:nil completion:^(BOOL granted, NSError *error) {
+        if(granted) {
+            NSArray *accountsArray = [accountStore accountsWithAccountType:accountType];
+            
+            if ([accountsArray count] > 0) {
+                ACAccount *twitterAccount = [accountsArray objectAtIndex:0];
+                NSLog(@"Twitter Username %@",twitterAccount.username);
+                mstrUserTwitter = twitterAccount.username;
+                NSLog(@"Twitter Account Type %@",twitterAccount.accountType);
+            }
+        }
+    }];
 }
 /**********************************************************************************************
  Initialization
@@ -87,6 +117,9 @@ NSString        *strUserLocation = @"None";
 {//-------------------------------------------------------------------------------
     //Google Analytics
     //self.screenName = nScreenNameAnalytics;
+    
+    self.Declarations   = [[Declarations alloc] init];
+    mApp                = [UIApplication sharedApplication];
     
     //Status Bar
     [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
@@ -97,7 +130,7 @@ NSString        *strUserLocation = @"None";
     mApp                = [UIApplication sharedApplication];
 
     dispatch_async(dispatch_get_main_queue(), ^{
-        //[self animateTitle];
+        [self animateTitle];
         [[NSRunLoop mainRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.1]];
     });
     
@@ -131,8 +164,12 @@ NSString        *strUserLocation = @"None";
     self.locationManager.delegate           = self;
     self.location                           = [[CLLocation alloc] init];
     self.locationManager.desiredAccuracy    = kCLLocationAccuracyKilometer;
+    [self.locationManager  requestWhenInUseAuthorization];
+    [self.locationManager  requestAlwaysAuthorization];
+    
     [self.locationManager startUpdatingLocation];
 }
+
 /**********************************************************************************************
  Localization
  **********************************************************************************************/
@@ -147,6 +184,7 @@ NSString        *strUserLocation = @"None";
          {
              NSString *addressName = [placemark name];
              NSString *city = [placemark locality];
+             mstrReqCity = city;
              NSString *administrativeArea = [placemark administrativeArea];
              NSString *country  = [placemark country];
              NSString *countryCode = [placemark ISOcountryCode];
@@ -182,18 +220,10 @@ NSString        *strUserLocation = @"None";
 /**********************************************************************************************
  Initialization
  **********************************************************************************************/
-- (IBAction)btnDoctorPressed:(id)sender
+- (IBAction)btnTutorialPressed:(id)sender
 {
-    NSLog(@"btnStartTutorialPressed");
+    NSLog(@"btnTutorialPressed");
     IntroPages *vc = [mStoryboard instantiateViewControllerWithIdentifier:@"IntroPages"];
-    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    [appDelegate transitionToViewController:vc
-                             withTransition:UIViewAnimationOptionTransitionFlipFromRight];
-}
-- (IBAction)btnPatientPressed:(id)sender
-{
-    NSLog(@"btnPatientPressed");
-    TabBar *vc = [mStoryboard instantiateViewControllerWithIdentifier:@"TabBarPatient"];
     AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     [appDelegate transitionToViewController:vc
                              withTransition:UIViewAnimationOptionTransitionFlipFromRight];
@@ -202,7 +232,7 @@ NSString        *strUserLocation = @"None";
 - (IBAction)btnEnterPressed:(id)sender
 {
     NSLog(@"btnEnterPressed");
-    TabBar *vc = [mStoryboard instantiateViewControllerWithIdentifier:@"TabBarPatient"];
+    TabBar *vc = [mStoryboard instantiateViewControllerWithIdentifier:@"TabBar"];
     AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     [appDelegate transitionToViewController:vc
                              withTransition:UIViewAnimationOptionTransitionFlipFromRight];

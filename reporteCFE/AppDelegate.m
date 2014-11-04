@@ -40,10 +40,65 @@ NSString *const SCSessionStateChangedNotification =
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
-    [GMSServices provideAPIKey:@"AIzaSyAMaGnotbipo1oDpL2Hn14QlP8RbvZA2m4"];
+    [GMSServices provideAPIKey:@"AIzaSyC-FmDhcvNZ8g9TlVhlq-RTfuCCzrmvWAU"];
+    
+    
+    #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 80000
+    if ([application respondsToSelector:@selector(registerUserNotificationSettings:)])
+    {
+        // use registerUserNotificationSettings
+        // iOS 8 Notifications
+        [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
+        
+        [application registerForRemoteNotifications];
+    } else
+    {
+        // use registerForRemoteNotifications
+    }
+    #else
+    // use registerForRemoteNotifications
+        [[UIApplication sharedApplication] registerForRemoteNotificationTypes: (UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound)];
+    #endif
+    
+    /*
+    //-- Set Notification
+    if ([application respondsToSelector:@selector(isRegisteredForRemoteNotifications)])
+    {
+        // iOS 8 Notifications
+        [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
+        
+        [application registerForRemoteNotifications];
+    }
+    else
+    {
+        // iOS < 8 Notifications
+        [application registerForRemoteNotificationTypes:
+         (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound)];
+    }
+     */
+    
     
     /*
     [[UIApplication sharedApplication] registerForRemoteNotificationTypes: (UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound)];
+     */
+    
+    /*
+    
+    //-----------PUSHWOOSH PART-----------
+    // set custom delegate for push handling, in our case - view controller
+    PushNotificationManager * pushManager = [PushNotificationManager pushManager];
+    pushManager.delegate = self;
+    
+    // handling push on app start
+    [[PushNotificationManager pushManager] handlePushReceived:launchOptions];
+    
+    // make sure we count app open in Pushwoosh stats
+    [[PushNotificationManager pushManager] sendAppOpen];
+    
+    // register for push notifications!
+    [[PushNotificationManager pushManager] registerForPushNotifications];
+     */
+    
     
     pushManager = [PushNotificationManager pushManager];
     pushManager.delegate = self;
@@ -53,7 +108,8 @@ NSString *const SCSessionStateChangedNotification =
         
         [pushManager startLocationTracking];
     }
-     */
+    
+     
     
      [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
     return YES;

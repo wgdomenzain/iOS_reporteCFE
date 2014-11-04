@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Pushwoosh/PushNotificationManager.h>
 
 
 extern NSString *const SCSessionStateChangedNotification;
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, PushNotificationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 - (void)transitionToViewController:(UIViewController *)viewController

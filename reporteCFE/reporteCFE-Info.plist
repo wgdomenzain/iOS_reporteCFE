@@ -28,8 +28,10 @@
 	<string>1.0</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string></string>
 	<key>Pushwoosh_APPID</key>
-	<string>B6C52-D27A5</string>
+	<string>93E84-ECC19</string>
 	<key>Pushwoosh_AUTO</key>
 	<false/>
 	<key>Supported background modes</key>

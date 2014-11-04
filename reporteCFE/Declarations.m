@@ -8,95 +8,6 @@
 
 #import "Declarations.h"
 
-//Arrays for XML
-//Alert
-NSMutableArray      *mmaMsgID;
-NSMutableArray      *mmaSenderID;
-NSMutableArray      *mmaSentTime;
-NSMutableArray      *mmaMsgStatus;
-NSMutableArray      *mmaMsgType;
-NSMutableArray      *mmaSource;
-NSMutableArray      *mmaScope;
-NSMutableArray      *mmaRestriction;
-NSMutableArray      *mmaAddresses;
-NSMutableArray      *mmaHandlingCode;
-NSMutableArray      *mmaNote;
-NSMutableArray      *mmaReferenceIDs;
-NSMutableArray      *mmaIncidentIDs;
-
-//Info
-NSMutableArray      *mmaLanguage;
-NSMutableArray      *mmaCategory;
-NSMutableArray      *mmaEvent;
-NSMutableArray      *mmaResponseType;
-NSMutableArray      *mmaUrgency;
-NSMutableArray      *mmaSeverity;
-NSMutableArray      *mmaCertainty;
-NSMutableArray      *mmaAudience;
-NSMutableArray      *mmaEventCode;
-NSMutableArray      *mmaEffective;
-NSMutableArray      *mmaOnset;
-NSMutableArray      *mmaExpires;
-NSMutableArray      *mmaSenderName;
-NSMutableArray      *mmaHeadline;
-NSMutableArray      *mmaDescription;
-NSMutableArray      *mmaInstruction;
-NSMutableArray      *mmaWeb;
-NSMutableArray      *mmaContact;
-NSMutableArray      *mmaParameter;
-NSMutableArray      *mmaParameterAll;
-
-//Resource
-NSMutableArray      *mmaResourceDesc;
-NSMutableArray      *mmaMIMEType;
-NSMutableArray      *mmaFileSize;
-NSMutableArray      *mmaURI;
-NSMutableArray      *mmaDeferencedURI;
-NSMutableArray      *mmaDigest;
-
-//Area
-NSMutableArray      *mmaAreaDesc;
-NSMutableArray      *mmaAreaPolygon;
-NSMutableArray      *mmaAreaPolygonAll;
-NSMutableArray      *mmaAreaPolygon2;
-NSMutableArray      *mmaAreaCircle;
-NSMutableArray      *mmaAreaGeocode;
-NSMutableArray      *mmaAltitude;
-NSMutableArray      *mmaCeiling;
-
-//GeoJson
-NSMutableArray      *mmaTypeMaster;
-NSMutableArray      *mmaFeaturesMaster;
-NSMutableArray      *mmaTypeChild;
-NSMutableArray      *mmaGeometryChild;
-NSMutableArray      *mmaGeometryType;
-NSMutableArray      *mmaGeometryCoordinates;
-NSMutableArray      *mmaPropertiesChild;
-NSMutableArray      *mmaPropertiesObjectID;
-NSMutableArray      *mmaPropertiesZona;
-NSMutableArray      *mmaPropertiesAreaKM;
-NSMutableArray      *mmaPropertiesObjectID;
-NSMutableArray      *mmaPropertiesObjectID;
-NSMutableArray      *mmaPropertiesObjectID;
-
-//SubArrays
-NSMutableArray      *mmaDirection;
-NSMutableArray      *mmaAuthor;
-NSMutableArray      *mmaReviewer;
-NSMutableArray      *mmaSemaphore;
-NSMutableArray      *mmaParameterCategory;
-NSMutableArray      *mmaDistance;
-
-
-//GeoJsons
-NSMutableArray      *mmaGJType[10];
-NSMutableArray      *mmaGJFeatures[10];
-NSMutableArray      *mmaGJFtType[10];
-NSMutableArray      *mmaGJFtGeometry[10];
-NSMutableArray      *mmaGJFtGeometryType[10];
-NSMutableArray      *mmaGJFtGeometryCoord[10];
-NSMutableArray      *mmaGJFtProp[10];
-
 //Application
 UIApplication       *mApp;
 
@@ -114,36 +25,75 @@ float               mlatitude;
 float               mlongitude;
 
 //NSDictionary
-NSDictionary        *mGeoJson[10];
-NSDictionary        *mJSRegister;
-NSDictionary        *mJSFamily;
+NSDictionary        *mJsonLogin;
+NSMutableArray      *mmaReports;
+NSMutableArray      *mmaReportsDate;
+NSMutableArray      *mmaReportsDesc;
+NSMutableArray      *mmaReportsId;
+NSMutableArray      *mmaReportsLastUpdate;
+NSMutableArray      *mmaReportsLat;
+NSMutableArray      *mmaReportsLng;
+NSMutableArray      *mmaReportsPubComments;
+NSMutableArray      *mmaReportsStatus;
+NSMutableArray      *mmaReportsType;
+NSMutableArray      *mmaReportsSubType;
+
+//Places
+NSDictionary        *mJsonPlaces;
+NSMutableArray      *mmaPlacesLat;
+NSMutableArray      *mmaPlacesLng;
+NSMutableArray      *mmaPlacesAddress;
+NSMutableArray      *mmaPlacesSuburb;
+NSMutableArray      *mmaPlacesWorkdays;
+NSMutableArray      *mmaPlacesWorkTime;
+NSMutableArray      *mmaPlacesOffices;
+NSMutableArray      *mmaPlacesATM;
+
+//Places
+NSDictionary        *mJsonSetReport;
+NSString            *mstrReportID;
 
 //NSMutableArray
-NSMutableArray      *mmaAlertsCAPSNames;
-NSMutableArray      *mmaRiskZoneItems;
-
-NSMutableArray      *mmaFamilyMembers;
-NSMutableArray      *mmaFamilyMembersName;
-NSMutableArray      *mmaFamilyMembersStatus;
-NSMutableArray      *mmaFamilyMembersMobile;
-NSMutableArray      *mmaFamilyMembersTime;
-NSMutableArray      *mmaFamilyMembersType;
 
 //NSString
-NSString            *mstrUrlCAPS[10];
-NSString            *mstrUserName;
-NSString            *mstrUserMobile;
+NSString            *mstrRequestedReport;
 NSString            *mstrUserPushToken;
-NSString            *mstrUserType;
 NSString            *mstrUserID;
-NSString            *mstrFamilyMobile;
+NSString            *mstrUserTwitter;
+UIImage             *mimgReport;
 
+NSString            *mstrReqLat;
+NSString            *mstrReqLat;
+NSString            *mstrReqLng;
+NSString            *mstrReqType;
+NSString            *mstrReqSubType;
+NSString            *mstrReqDesc;
+NSString            *mstrReqCity;
+NSString            *mstrReqEmail;
+NSString            *mstrReqTwitter;
+NSString            *mstrReqRPU;
+
+NSDictionary        *mJsonGetUserReport;
+NSMutableArray      *mmaMyReports;
+NSMutableArray      *mmaMyReportsDate;
+NSMutableArray      *mmaMyReportsDesc;
+NSMutableArray      *mmaMyReportsId;
+NSMutableArray      *mmaMyReportsLastUpdate;
+NSMutableArray      *mmaMyReportsLat;
+NSMutableArray      *mmaMyReportsLng;
+NSMutableArray      *mmaMyReportsPubComments;
+NSMutableArray      *mmaMyReportsStatus;
+NSMutableArray      *mmaMyReportsType;
+NSMutableArray      *mmaMyReportsSubType;
+NSMutableArray      *mmaMyPubComments;
+NSMutableArray      *mmaMyPubDateComments;
+
+unsigned int        uiReqIndex;
 //Storyboard
 UIStoryboard        *mStoryboard;
 
 //Unsigned int
-unsigned int        muiTotalAlertCAPS       = 0;
-unsigned int        muiTotalRiskZonesItems  = 0;
+
 
 //User Defaults
 NSUserDefaults      *mUserDefaults;
@@ -153,27 +103,25 @@ NSUserDefaults      *mUserDefaults;
 @implementation Declarations
 
 /*******************************************************************************
- 1 Get GeoJson
- *******************************************************************************/
+1 Login
+*******************************************************************************/
 //-------------------------------------------------------------------------------
-- (void) postGetGeoJson:(NSString*)strItem
+- (void) postLogin
 {
-    NSLog(@"postGetGeoJson");
+    NSLog(@"postLogin");
     NSOperationQueue *queue = [NSOperationQueue new];
-    NSInvocationOperation *operation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(loadGetGeoJson:) object:strItem];
+    NSInvocationOperation *operation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(loadLogin) object:nil];
     [queue addOperation:operation];
 }
-
 //-------------------------------------------------------------------------------
-- (void) loadGetGeoJson:(NSString*)strItem
+- (void) loadLogin
 {
     @try
     {
-        NSLog(@"strItem = %@", strItem);
-        NSString *post = [[NSString alloc] initWithFormat:@""];
-        NSLog(@"postGetGeoJson: %@",post);
-        NSURL *url = [NSURL URLWithString:mstrUrlCAPS[[strItem intValue]]];
-        NSLog(@"URL postGetGeoJson1 = %@", url);
+        NSString *post = [[NSString alloc] initWithFormat:@"pushToken=%@&lat=%@&lng=%@", mstrUserPushToken, [NSString stringWithFormat:@"%f", mlatitude], [NSString stringWithFormat:@"%f", mlongitude]];
+        NSLog(@"postLogin: %@",post);
+        NSURL *url = [NSURL URLWithString:@"http://ec2-54-69-204-188.us-west-2.compute.amazonaws.com/user/auth/login"];
+        NSLog(@"URL postLogin = %@", url);
         NSData *postData = [post dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
         NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
         NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
@@ -190,8 +138,117 @@ NSUserDefaults      *mUserDefaults;
 //-------------------------------------------------------------------------------
         if ([response statusCode] >=200 && [response statusCode] <300)
         {
-            mGeoJson[[strItem intValue]] = [NSJSONSerialization JSONObjectWithData:urlData options:kNilOptions error:&error];
-            //NSLog(@"mGeoJson[%d] %@", [strItem intValue], mGeoJson[[strItem intValue]]);
+            mJsonLogin = [NSJSONSerialization JSONObjectWithData:urlData options:kNilOptions error:&error];
+        }
+        else
+        {
+            if (error)
+            {
+                NSLog(@"Error");
+                
+            }
+            else
+            {
+                NSLog(@"Conect Fail");
+            }
+        }
+//-------------------------------------------------------------------------------
+    }
+    @catch (NSException * e)
+    {
+        NSLog(@"Exception");
+    }
+//-------------------------------------------------------------------------------
+    //Save json in memory phone
+    if (mJsonLogin.count > 0)
+    {
+        NSLog(@"mJsonLogin%@", mJsonLogin);
+        [mUserDefaults setObject: mJsonLogin forKey: pmstrLogin];
+        mmaReports              = [mJsonLogin valueForKey: @"reports"];
+        mmaReportsDate          = [mmaReports valueForKey: @"creationDate"];
+        mmaReportsDesc          = [mmaReports valueForKey: @"desc"];
+        mmaReportsId            = [mmaReports valueForKey: @"id"];
+        mmaReportsLastUpdate    = [mmaReports valueForKey: @"lastUpdate"];
+        mmaReportsLat           = [mmaReports valueForKey: @"lat"];
+        mmaReportsLng           = [mmaReports valueForKey: @"lng"];
+        mmaReportsPubComments   = [mmaReports valueForKey: @"publicComments"];
+        
+        mmaReportsStatus        = [mmaReports valueForKey: @"status"];
+        mmaReportsType          = [mmaReports valueForKey: @"type"];
+        mmaReportsSubType       = [mmaReports valueForKey: @"subType"];
+        
+        NSLog(@"mmaReports %@", mmaReports);
+        NSLog(@"mmaReportsDate %@", mmaReportsDate);
+        NSLog(@"mmaReportsDesc %@", mmaReportsDesc);
+        NSLog(@"mmaReportsId %@", mmaReportsId);
+        NSLog(@"mmaReportsStatus %@", mmaReportsStatus);
+        NSLog(@"mmaReportsType %@", mmaReportsType);
+        NSLog(@"mmaReportsStatus %@", mmaReportsStatus);
+        NSLog(@"mmaReportsLat %@", mmaReportsLat);
+        NSLog(@"mmaReportsLng %@", mmaReportsLng);
+        
+        mstrUserID = [mJsonLogin valueForKey: @"userID"];
+        NSLog(@"mstrUserID %@", mstrUserID);
+        [mUserDefaults setObject: mstrUserID forKey: pmstrUserID];
+        [mUserDefaults setObject: @"YES" forKey: pmstrAlreadyRegistered];
+    }
+    else
+    {
+        NSLog(@"PostFail");
+    }
+}
+- (void) parseReports
+{
+    mmaReports              = [mJsonLogin valueForKey: @"reports"];
+    mmaReportsDate          = [mmaReports valueForKey: @"creationDate"];
+    mmaReportsDesc          = [mmaReports valueForKey: @"desc"];
+    mmaReportsId            = [mmaReports valueForKey: @"id"];
+    mmaReportsLastUpdate    = [mmaReports valueForKey: @"lastUpdate"];
+    mmaReportsLat           = [mmaReports valueForKey: @"lat"];
+    mmaReportsLng           = [mmaReports valueForKey: @"lng"];
+    mmaReportsPubComments   = [mmaReports valueForKey: @"publicComments"];
+    mmaReportsStatus        = [mmaReports valueForKey: @"status"];
+    mmaReportsType          = [mmaReports valueForKey: @"type"];
+    mmaReportsSubType       = [mmaReports valueForKey: @"subType"];
+}
+/*******************************************************************************
+ 2 Places
+ *******************************************************************************/
+//-------------------------------------------------------------------------------
+- (void) postPlaces
+{
+    NSLog(@"postPlaces");
+    NSOperationQueue *queue = [NSOperationQueue new];
+    NSInvocationOperation *operation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(loadPlaces) object:nil];
+    [queue addOperation:operation];
+}
+
+//-------------------------------------------------------------------------------
+- (void) loadPlaces
+{
+    @try
+    {
+        NSString *post = [[NSString alloc] initWithFormat:@""];
+        NSLog(@"postPlaces: %@",post);
+        NSURL *url = [NSURL URLWithString:@"http://ec2-54-69-204-188.us-west-2.compute.amazonaws.com/get/attention_center/centers"];
+        NSLog(@"URL postLogin = %@", url);
+        NSData *postData = [post dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
+        NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
+        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+        [request setURL:url];
+        [request setHTTPMethod:@"POST"];
+        [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+        [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+        [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+        [request setHTTPBody:postData];
+        [NSURLRequest requestWithURL:url];
+        NSError *error = [[NSError alloc] init];
+        NSHTTPURLResponse *response = nil;
+        NSData *urlData=[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+//-------------------------------------------------------------------------------
+        if ([response statusCode] >=200 && [response statusCode] <300)
+        {
+            mJsonPlaces = [NSJSONSerialization JSONObjectWithData:urlData options:kNilOptions error:&error];
         }
         else
         {
@@ -213,28 +270,18 @@ NSUserDefaults      *mUserDefaults;
     }
 //-------------------------------------------------------------------------------
 //Save json in memory phone
-    if (mGeoJson[[strItem intValue]].count > 0)
+    if (mJsonPlaces.count > 0)
     {
-        NSString *strTemp;
-        strTemp = [pmmaGeoJson stringByAppendingString:strItem];
-        [mUserDefaults setObject: mGeoJson[[strItem intValue]] forKey: strTemp];
-        NSLog(@"mGeoJsonCompleted%@", strItem);
-        mmaGJType[[strItem intValue]]               = [mGeoJson[[strItem intValue]] valueForKey: @"type"];
-        mmaGJFeatures[[strItem intValue]]           = [mGeoJson[[strItem intValue]] valueForKey: @"features"];
-        mmaGJFtType[[strItem intValue]]             = [mmaGJFeatures[[strItem intValue]] valueForKey: @"type"];
-        mmaGJFtGeometry[[strItem intValue]]         = [mmaGJFeatures[[strItem intValue]] valueForKey: @"geometry"];
-        mmaGJFtGeometryType[[strItem intValue]]     = [mmaGJFtGeometry[[strItem intValue]] valueForKey: @"type"];
-        mmaGJFtGeometryCoord[[strItem intValue]]     = [mmaGJFtGeometry[[strItem intValue]] valueForKey: @"coordinates"];
-        
-        /*
-        NSLog(@"mmaGJType %@", mmaGJType[[strItem intValue]]);
-        NSLog(@"mmaGJFeatures %@", mmaGJFeatures[[strItem intValue]]);
-        NSLog(@"mmaGJFtGeometry %@", mmaGJFtGeometry[[strItem intValue]]);
-        NSLog(@"mmaGJFtGeometryType %@", mmaGJFtGeometryType[[strItem intValue]]);
-        NSLog(@"mmaGJFtGeometryCoord %@", mmaGJFtGeometryCoord[[strItem intValue]]);
-        
-        NSLog(@"mmaGJFtGeometryCoord[0][0][0][0] %@", mmaGJFtGeometryCoord[[strItem intValue]][0][0][0]);
-         */
+        NSLog(@"mJsonPlaces%@", mJsonPlaces);
+        [mUserDefaults setObject: mJsonPlaces forKey: pmstrPlaces];
+        mmaPlacesLat        = [mJsonPlaces valueForKey: @"lat"];
+        mmaPlacesLng        = [mJsonPlaces valueForKey: @"lng"];
+        mmaPlacesAddress    = [mJsonPlaces valueForKey: @"address"];
+        mmaPlacesSuburb     = [mJsonPlaces valueForKey: @"suburb"];
+        mmaPlacesWorkdays   = [mJsonPlaces valueForKey: @"workDays"];
+        mmaPlacesWorkTime   = [mJsonPlaces valueForKey: @"workTime"];
+        mmaPlacesOffices    = [mJsonPlaces valueForKey: @"agencia"];
+        mmaPlacesATM        = [mJsonPlaces valueForKey: @"cfmatico"];
     }
     else
     {
@@ -242,27 +289,40 @@ NSUserDefaults      *mUserDefaults;
     }
 }
 
-/*******************************************************************************
-2 Register
-*******************************************************************************/
-//-------------------------------------------------------------------------------
-- (void) postRegister
+- (void) parsePlaces
 {
-    NSLog(@"postGetGeoJson");
+    NSLog(@"parsePlaces");
+    mmaPlacesLat        = [mJsonPlaces valueForKey: @"lat"];
+    mmaPlacesLng        = [mJsonPlaces valueForKey: @"lng"];
+    mmaPlacesAddress    = [mJsonPlaces valueForKey: @"address"];
+    mmaPlacesSuburb     = [mJsonPlaces valueForKey: @"suburb"];
+    mmaPlacesWorkdays   = [mJsonPlaces valueForKey: @"workDays"];
+    mmaPlacesWorkTime   = [mJsonPlaces valueForKey: @"workTime"];
+    mmaPlacesOffices    = [mJsonPlaces valueForKey: @"agencia"];
+    mmaPlacesATM        = [mJsonPlaces valueForKey: @"cfmatico"];
+}
+
+/*******************************************************************************
+ 3 Set Report
+ *******************************************************************************/
+//-------------------------------------------------------------------------------
+- (void) postSetReport
+{
+    NSLog(@"postSetReport");
     NSOperationQueue *queue = [NSOperationQueue new];
-    NSInvocationOperation *operation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(loadRegister) object:nil];
+    NSInvocationOperation *operation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(loadSetReport) object:nil];
     [queue addOperation:operation];
 }
 
 //-------------------------------------------------------------------------------
-- (void) loadRegister
+- (void) loadSetReport
 {
     @try
     {
-        NSString *post = [[NSString alloc] initWithFormat:@"mobile=%@&name=%@&pushToken=%@&type=%@", mstrUserMobile, mstrUserName, mstrUserPushToken, mstrUserType];
-        NSLog(@"postGetGeoJson: %@",post);
-        NSURL *url = [NSURL URLWithString:@"http://ec2-54-68-158-184.us-west-2.compute.amazonaws.com/user/auth/register"];
-        NSLog(@"URL postRegister = %@", url);
+        NSString *post = [[NSString alloc] initWithFormat:@"userID=%@&lat=%@&lng=%@&type=%@&subType=%@&desc=%@&city=%@&rpu=%@&email=%@&twitter=%@", mstrUserID, mstrReqLat, mstrReqLng, mstrReqType, mstrReqSubType, mstrReqDesc, mstrReqCity, mstrReqRPU, mstrReqEmail, mstrReqTwitter];
+        NSLog(@"postSetReport: %@",post);
+        NSURL *url = [NSURL URLWithString:@"http://ec2-54-69-204-188.us-west-2.compute.amazonaws.com/set/user/report"];
+        NSLog(@"URL postLogin = %@", url);
         NSData *postData = [post dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
         NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
         NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
@@ -276,11 +336,10 @@ NSUserDefaults      *mUserDefaults;
         NSError *error = [[NSError alloc] init];
         NSHTTPURLResponse *response = nil;
         NSData *urlData=[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-        //-------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------
         if ([response statusCode] >=200 && [response statusCode] <300)
         {
-            mJSRegister = [NSJSONSerialization JSONObjectWithData:urlData options:kNilOptions error:&error];
-            //NSLog(@"mGeoJson[%d] %@", [strItem intValue], mGeoJson[[strItem intValue]]);
+            mJsonSetReport = [NSJSONSerialization JSONObjectWithData:urlData options:kNilOptions error:&error];
         }
         else
         {
@@ -294,130 +353,88 @@ NSUserDefaults      *mUserDefaults;
                 NSLog(@"Conect Fail");
             }
         }
-        //-------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------
     }
     @catch (NSException * e)
     {
         NSLog(@"Exception");
     }
-    //-------------------------------------------------------------------------------
-    //Save json in memory phone
-    if (mJSRegister.count > 0)
-    {
-        NSLog(@"mJSRegister%@", mJSRegister);
-        mstrUserID = [mJSRegister valueForKey: @"userID"];
-        NSLog(@"mstrUserID %@", mstrUserID);
-        [mUserDefaults setObject: mstrUserID forKey: pmstrUserID];
-        [mUserDefaults setObject: @"YES" forKey: pmstrAlreadyRegistered];
-    }
-    else
-    {
-        NSLog(@"PostFail");
-    }
-}
-/*******************************************************************************
- 3 Add Family
- *******************************************************************************/
 //-------------------------------------------------------------------------------
-- (void) postAddFamily
-{
-    NSLog(@"postAddFamily");
-    NSOperationQueue *queue = [NSOperationQueue new];
-    NSInvocationOperation *operation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(loadAddFamily) object:nil];
-    [queue addOperation:operation];
-}
-
-//-------------------------------------------------------------------------------
-- (void) loadAddFamily
-{
-    @try
+//Save json in memory phone
+    if (mJsonSetReport.count > 0)
     {
-        NSString *post = [[NSString alloc] initWithFormat:@"userID=%@&mobile=%@", mstrUserID, mstrFamilyMobile];
-        NSLog(@"postGetGeoJson: %@",post);
-        NSURL *url = [NSURL URLWithString:@"http://ec2-54-68-158-184.us-west-2.compute.amazonaws.com/add/family/member"];
-        NSLog(@"URL postRegister = %@", url);
-        NSData *postData = [post dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
-        NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
-        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-        [request setURL:url];
-        [request setHTTPMethod:@"POST"];
-        [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
-        [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-        [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-        [request setHTTPBody:postData];
-        [NSURLRequest requestWithURL:url];
-        NSError *error = [[NSError alloc] init];
-        NSHTTPURLResponse *response = nil;
-        NSData *urlData=[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-        //-------------------------------------------------------------------------------
-        if ([response statusCode] >=200 && [response statusCode] <300)
-        {
-            mJSFamily = [NSJSONSerialization JSONObjectWithData:urlData options:kNilOptions error:&error];
-            //NSLog(@"mGeoJson[%d] %@", [strItem intValue], mGeoJson[[strItem intValue]]);
-        }
-        else
-        {
-            if (error)
-            {
-                NSLog(@"Error");
-                
-            }
-            else
-            {
-                NSLog(@"Conect Fail");
-            }
-        }
-        //-------------------------------------------------------------------------------
-    }
-    @catch (NSException * e)
-    {
-        NSLog(@"Exception");
-    }
-    //-------------------------------------------------------------------------------
-    //Save json in memory phone
-    if (mJSFamily.count > 0)
-    {
-        NSLog(@"mJSFamily%@", mJSFamily);
-        mmaFamilyMembers            = [mJSFamily valueForKey: @"familyMembers"];
-        mmaFamilyMembersName        = [mmaFamilyMembers valueForKey: @"name"];
-        mmaFamilyMembersStatus      = [mmaFamilyMembers valueForKey: @"status"];
-        mmaFamilyMembersMobile      = [mmaFamilyMembers valueForKey: @"mobile"];
-        mmaFamilyMembersTime        = [mmaFamilyMembers valueForKey: @"hour"];
-        mmaFamilyMembersType        = [mmaFamilyMembers valueForKey: @"type"];
+        NSLog(@"mJsonSetReport%@", mJsonSetReport);
+        [mUserDefaults setObject: mJsonSetReport forKey: pmstrSetReport];
+        mmaReports              = [mJsonSetReport valueForKey: @"reports"];
+        mmaReportsDate          = [mmaReports valueForKey: @"creationDate"];
+        mmaReportsDesc          = [mmaReports valueForKey: @"desc"];
+        mmaReportsId            = [mmaReports valueForKey: @"id"];
+        mmaReportsLastUpdate    = [mmaReports valueForKey: @"lastUpdate"];
+        mmaReportsLat           = [mmaReports valueForKey: @"lat"];
+        mmaReportsLng           = [mmaReports valueForKey: @"lng"];
+        mmaReportsPubComments   = [mmaReports valueForKey: @"publicComments"];
         
-        NSLog(@"mmaFamilyMembers %@", mmaFamilyMembers);
-        NSLog(@"mmaFamilyMembersName %@", mmaFamilyMembersName);
-        NSLog(@"mmaFamilyMembersStatus %@", mmaFamilyMembersStatus);
-        NSLog(@"mmaFamilyMembersMobile %@", mmaFamilyMembersMobile);
-        NSLog(@"mmaFamilyMembersTime %@", mmaFamilyMembersTime);
-        NSLog(@"mmaFamilyMembersType %@", mmaFamilyMembersType);
+        mmaReportsStatus        = [mmaReports valueForKey: @"status"];
+        mmaReportsType          = [mmaReports valueForKey: @"type"];
+        mmaReportsSubType       = [mmaReports valueForKey: @"subType"];
+        
+        mstrReportID            = [mJsonSetReport valueForKey: @"reportID"];
+        
+        NSLog(@"mmaReports %@", mmaReports);
+        NSLog(@"mmaReportsDate %@", mmaReportsDate);
+        NSLog(@"mmaReportsDesc %@", mmaReportsDesc);
+        NSLog(@"mmaReportsId %@", mmaReportsId);
+        NSLog(@"mmaReportsStatus %@", mmaReportsStatus);
+        NSLog(@"mmaReportsType %@", mmaReportsType);
+        NSLog(@"mmaReportsStatus %@", mmaReportsStatus);
+        NSLog(@"mmaReportsLat %@", mmaReportsLat);
+        NSLog(@"mmaReportsLng %@", mmaReportsLng);
+        NSLog(@"mstrReportID %@", mstrReportID);
     }
     else
     {
         NSLog(@"PostFail");
     }
 }
+
+- (void) parseSetReport
+{
+    NSLog(@"parseSetReport");
+    mmaReports              = [mJsonLogin valueForKey: @"reports"];
+    mmaReportsDate          = [mmaReports valueForKey: @"creationDate"];
+    mmaReportsDesc          = [mmaReports valueForKey: @"desc"];
+    mmaReportsId            = [mmaReports valueForKey: @"id"];
+    mmaReportsLastUpdate    = [mmaReports valueForKey: @"lastUpdate"];
+    mmaReportsLat           = [mmaReports valueForKey: @"lat"];
+    mmaReportsLng           = [mmaReports valueForKey: @"lng"];
+    mmaReportsPubComments   = [mmaReports valueForKey: @"publicComments"];
+    mmaReportsStatus        = [mmaReports valueForKey: @"status"];
+    mmaReportsType          = [mmaReports valueForKey: @"type"];
+    mmaReportsSubType       = [mmaReports valueForKey: @"subType"];
+    mstrReportID            = [mJsonSetReport valueForKey: @"reportID"];
+}
+
 /*******************************************************************************
- 4 Get Family
+ 4 Get User Report
  *******************************************************************************/
 //-------------------------------------------------------------------------------
-- (void) postGetFamily
+- (void) postGetUserReport
 {
-    NSLog(@"postGetFamily");
+    NSLog(@"postGetUserReport");
     NSOperationQueue *queue = [NSOperationQueue new];
-    NSInvocationOperation *operation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(loadGetFamily) object:nil];
+    NSInvocationOperation *operation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(loadGetUserReport) object:nil];
     [queue addOperation:operation];
 }
 
 //-------------------------------------------------------------------------------
-- (void) loadGetFamily
+- (void) loadGetUserReport
 {
     @try
     {
         NSString *post = [[NSString alloc] initWithFormat:@"userID=%@", mstrUserID];
-        NSLog(@"postGetGeoJson: %@",post);
-        NSURL *url = [NSURL URLWithString:@"http://ec2-54-68-158-184.us-west-2.compute.amazonaws.com/get/family/members"];
-        NSLog(@"URL postRegister = %@", url);
+        NSLog(@"postGetUserReport: %@",post);
+        NSURL *url = [NSURL URLWithString:@"http://ec2-54-69-204-188.us-west-2.compute.amazonaws.com/get/user/reports"];
+        NSLog(@"URL postGetUserReport = %@", url);
         NSData *postData = [post dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
         NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
         NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
@@ -431,11 +448,10 @@ NSUserDefaults      *mUserDefaults;
         NSError *error = [[NSError alloc] init];
         NSHTTPURLResponse *response = nil;
         NSData *urlData=[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-        //-------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------
         if ([response statusCode] >=200 && [response statusCode] <300)
         {
-            mJSFamily = [NSJSONSerialization JSONObjectWithData:urlData options:kNilOptions error:&error];
-            //NSLog(@"mGeoJson[%d] %@", [strItem intValue], mGeoJson[[strItem intValue]]);
+            mJsonGetUserReport = [NSJSONSerialization JSONObjectWithData:urlData options:kNilOptions error:&error];
         }
         else
         {
@@ -449,34 +465,96 @@ NSUserDefaults      *mUserDefaults;
                 NSLog(@"Conect Fail");
             }
         }
-        //-------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------
     }
     @catch (NSException * e)
     {
         NSLog(@"Exception");
     }
-    //-------------------------------------------------------------------------------
-    //Save json in memory phone
-    if (mJSFamily.count > 0)
+//-------------------------------------------------------------------------------
+//Save json in memory phone
+    if (mJsonGetUserReport.count > 0)
     {
-        NSLog(@"mJSFamily%@", mJSFamily);
-        mmaFamilyMembers            = [mJSFamily valueForKey: @"familyMembers"];
-        mmaFamilyMembersName        = [mmaFamilyMembers valueForKey: @"name"];
-        mmaFamilyMembersStatus      = [mmaFamilyMembers valueForKey: @"status"];
-        mmaFamilyMembersMobile      = [mmaFamilyMembers valueForKey: @"mobile"];
-        mmaFamilyMembersTime        = [mmaFamilyMembers valueForKey: @"hour"];
-        mmaFamilyMembersType        = [mmaFamilyMembers valueForKey: @"type"];
+        NSLog(@"mJsonGetUserReport%@", mJsonGetUserReport);
+        [mUserDefaults setObject: mJsonGetUserReport forKey: pmstrGetUserReport];
         
-        NSLog(@"mmaFamilyMembers %@", mmaFamilyMembers);
-        NSLog(@"mmaFamilyMembersName %@", mmaFamilyMembersName);
-        NSLog(@"mmaFamilyMembersStatus %@", mmaFamilyMembersStatus);
-        NSLog(@"mmaFamilyMembersMobile %@", mmaFamilyMembersMobile);
-        NSLog(@"mmaFamilyMembersTime %@", mmaFamilyMembersTime);
-        NSLog(@"mmaFamilyMembersType %@", mmaFamilyMembersType);
+        //mmaMyPubComments            =  @"";
+        mmaMyReports                = [mJsonGetUserReport valueForKey: @"reports"];
+        mmaMyReportsDate            = [mmaMyReports valueForKey: @"creationDate"];
+        mmaMyReportsDesc            = [mmaMyReports valueForKey: @"desc"];
+        mmaMyReportsId              = [mmaMyReports valueForKey: @"id"];
+        mmaMyReportsLastUpdate      = [mmaMyReports valueForKey: @"lastUpdate"];
+        mmaMyReportsLat             = [mmaMyReports valueForKey: @"lat"];
+        mmaMyReportsLng             = [mmaMyReports valueForKey: @"lng"];
+        mmaMyReportsPubComments     = [mmaMyReports valueForKey: @"publicComments"];
+        mmaMyPubComments            = [mmaMyReportsPubComments valueForKey: @"comment"];
+        mmaMyPubDateComments        = [mmaMyReportsPubComments valueForKey: @"date"];
+        
+        NSLog(@"mmaMyPubComments %@", mmaMyPubComments);
+        
+        mmaMyReportsStatus          = [mmaMyReports valueForKey: @"status"];
+        mmaMyReportsType            = [mmaMyReports valueForKey: @"type"];
+        mmaMyReportsSubType         = [mmaMyReports valueForKey: @"subType"];
     }
     else
     {
         NSLog(@"PostFail");
     }
 }
+
+- (void) parseGetUserReport
+{
+    NSLog(@"parseGetUserReport");
+    //mmaMyPubComments            =  @"";
+    mmaMyReports                = [mJsonGetUserReport valueForKey: @"reports"];
+    mmaMyReportsDate            = [mmaMyReports valueForKey: @"creationDate"];
+    mmaMyReportsDesc            = [mmaMyReports valueForKey: @"desc"];
+    mmaMyReportsId              = [mmaMyReports valueForKey: @"id"];
+    mmaMyReportsLastUpdate      = [mmaMyReports valueForKey: @"lastUpdate"];
+    mmaMyReportsLat             = [mmaMyReports valueForKey: @"lat"];
+    mmaMyReportsLng             = [mmaMyReports valueForKey: @"lng"];
+    mmaMyReportsPubComments     = [mmaMyReports valueForKey: @"publicComments"];
+    mmaMyPubComments            = [mmaMyReportsPubComments valueForKey: @"comment"];
+    mmaMyPubDateComments        = [mmaMyReportsPubComments valueForKey: @"date"];
+    
+    mmaMyReportsStatus          = [mmaMyReports valueForKey: @"status"];
+    mmaMyReportsType            = [mmaMyReports valueForKey: @"type"];
+    mmaMyReportsSubType         = [mmaMyReports valueForKey: @"subType"];
+}
+
+/*******************************************************************************
+ 20 Upload User Photo
+ *******************************************************************************/
+- (void) postUploadPhoto
+{
+    NSOperationQueue *queue = [NSOperationQueue new];
+    NSInvocationOperation *operation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(loadUploadPhoto) object:nil];
+    [queue addOperation:operation];
+}
+//-------------------------------------------------------------------------------
+- (void) loadUploadPhoto
+{
+    AmazonS3Client *s3 = [[AmazonS3Client alloc] initWithAccessKey:nAWSAccessKeyID withSecretKey:nAWSSecretKey];
+    NSData *imageData = UIImageJPEGRepresentation(mimgReport, 1.0);
+    
+    NSString *strTemp = [mstrReportID stringByAppendingString:@".jpeg"];
+    
+    NSString *strTempBug = [NSString stringWithFormat:@"%@", strTemp];
+    S3PutObjectRequest *por = [[S3PutObjectRequest alloc] initWithKey:[@"reportImages/" stringByAppendingString: strTempBug] inBucket:@"reportecfe"];
+    por.contentType = @"image/jpeg";
+    por.data = imageData;
+    [s3 putObject:por];
+}
+
+/*
+ NSLog(@"mmaPlacesLat %@", mmaPlacesLat);
+ NSLog(@"mmaPlacesLng %@", mmaPlacesLng);
+ NSLog(@"mmaPlacesLng %@", mmaPlacesAddress);
+ NSLog(@"mmaPlacesLng %@", mmaPlacesWorkdays);
+ NSLog(@"mmaPlacesLng %@", mmaPlacesWorkTime);
+ NSLog(@"mmaPlacesLng %@", mmaPlacesOffices);
+ NSLog(@"mmaPlacesLng %@", mmaPlacesATM);
+ NSLog(@"mmaPlacesLat[0] %@", mmaPlacesLat[0]);
+ NSLog(@"mmaPlacesLng[0] %@", mmaPlacesLng[0]);
+ */
 @end

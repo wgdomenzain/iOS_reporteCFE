@@ -12,10 +12,14 @@
 #import <QuartzCore/QuartzCore.h>
 #import <CoreText/CoreText.h>
 #import <Pushwoosh/PushNotificationManager.h>
+#import <AddressBook/AddressBook.h>
+#import <AddressBookUI/AddressBookUI.h>
+#import <Accounts/Accounts.h>
 
 @interface Start : UIViewController<CLLocationManagerDelegate>
 //Variables
 @property (nonatomic,strong) PushNotificationManager    *PushNotificationManager;
+@property (nonatomic,strong) Declarations               *Declarations;
 
 //View
 @property (strong, nonatomic) IBOutlet UIView *viewStart;
@@ -37,8 +41,7 @@
 
 
 //Actions
-- (IBAction)btnDoctorPressed:(id)sender;
 - (IBAction)btnEnterPressed:(id)sender;
-- (IBAction)btnPatientPressed:(id)sender;
+- (IBAction)btnTutorialPressed:(id)sender;
 
 @end
